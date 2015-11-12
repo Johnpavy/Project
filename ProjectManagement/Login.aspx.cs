@@ -14,7 +14,7 @@ namespace ProjectManagement
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            error2.Visible = false;
+           /* error2.Visible = false;
             error1.Visible = false;
             EmailLbl.Visible = true;
             EmailTxtBox.Visible = true;
@@ -30,7 +30,7 @@ namespace ProjectManagement
             LastNameLbl.Visible = false;
             ConfirmPWLbl.Visible = false;
             ConfirmPassTxtBox.Visible = false;
-            RegisterBtn.Visible = false;
+            RegisterBtn.Visible = false;*/
         }
 
         protected void SignUpBtn_Click(object sender, EventArgs e)
@@ -51,6 +51,8 @@ namespace ProjectManagement
             ConfirmPWLbl.Visible = true;
             ConfirmPassTxtBox.Visible = true;
             RegisterBtn.Visible = true;
+            LoginBtn.Visible = false;
+            SignUpBtn.Visible = false;
         }
 
         protected void LoginBtn_Click(object sender, EventArgs e)

@@ -28,28 +28,28 @@
         <br />
         <asp:TextBox ID="FNameTxtBox" runat="server" Visible="False"></asp:TextBox>
         <br />
-        <asp:Label ID="FNameLbl" runat="server" Text="First Name"></asp:Label>
+        <asp:Label ID="FNameLbl" runat="server" Text="First Name" Visible="False"></asp:Label>
         <br />
-        <asp:TextBox ID="LNameTxtbox" runat="server"></asp:TextBox>
+        <asp:TextBox ID="LNameTxtbox" runat="server" Visible="False"></asp:TextBox>
         <br />
         <asp:Label ID="LastNameLbl" runat="server" Text="Last Name" Visible="False"></asp:Label>
         <br />
-        <asp:TextBox ID="NewPassTxtBox" runat="server"></asp:TextBox>
+        <asp:TextBox ID="NewPassTxtBox" runat="server" Visible="False"></asp:TextBox>
         <br />
         <asp:Label ID="NewPasswordLbl" runat="server" Text="Password" Visible="False"></asp:Label>
         <br />
-        <asp:TextBox ID="ConfirmPassTxtBox" runat="server"></asp:TextBox>
+        <asp:TextBox ID="ConfirmPassTxtBox" runat="server" Visible="False"></asp:TextBox>
         <br />
-        <asp:Label ID="ConfirmPWLbl" runat="server" Text="Confirm Password"></asp:Label>
+        <asp:Label ID="ConfirmPWLbl" runat="server" Text="Confirm Password" Visible="False"></asp:Label>
         <br />
-        <asp:Button ID="RegisterBtn" runat="server" Text="Register" OnClick="RegisterBtn_Click" />
+        <asp:Button ID="RegisterBtn" runat="server" Text="Register" OnClick="RegisterBtn_Click" Visible="False" />
         <br />
         <asp:Label ID="error1" runat="server" Text="Label" Visible="False"></asp:Label>
         <br />
         <asp:Label ID="error2" runat="server" Text="Label" Visible="False"></asp:Label>
         <br />
         <br />
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:inetConnectionString %>" SelectCommand="SELECT * FROM [attachment]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:inetConnectionString %>" SelectCommand="SELECT * FROM [username]"></asp:SqlDataSource>
     
     </div>
     </form>
