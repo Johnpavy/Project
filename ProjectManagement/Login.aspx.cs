@@ -14,32 +14,16 @@ namespace ProjectManagement
         protected void Page_Load(object sender, EventArgs e)
         {
 
-           /* error2.Visible = false;
-            error1.Visible = false;
-            EmailLbl.Visible = true;
-            EmailTxtBox.Visible = true;
-            PasswordLbl.Visible = true;
-            PasswordTxtBox.Visible = true;
-            NewEmailTxtBox.Visible = false;
-            SignupEmailLbl.Visible = false;
-            NewPassTxtBox.Visible = false;
-            NewPasswordLbl.Visible = false;
-            FNameLbl.Visible = false;
-            FNameTxtBox.Visible = false;
-            LNameTxtbox.Visible = false;
-            LastNameLbl.Visible = false;
-            ConfirmPWLbl.Visible = false;
-            ConfirmPassTxtBox.Visible = false;
-            RegisterBtn.Visible = false;*/
+
         }
 
         protected void SignUpBtn_Click(object sender, EventArgs e)
         {
+            // If signup button is clicked, these are all hidden
             EmailLbl.Visible = false;
             EmailTxtBox.Visible = false;
             PasswordLbl.Visible = false;
             PasswordTxtBox.Visible = false;
-
             NewEmailTxtBox.Visible = true;
             SignupEmailLbl.Visible = true;
             NewPassTxtBox.Visible = true;
@@ -54,17 +38,23 @@ namespace ProjectManagement
             LoginBtn.Visible = false;
             SignUpBtn.Visible = false;
         }
-
+        // If login button is clicked, program will go here. This function is not complete
         protected void LoginBtn_Click(object sender, EventArgs e)
         {
+            // Store username in a variable to check and see if its available
             string userName = EmailTxtBox.Text;
             string password = PasswordTxtBox.Text;
+            // Store username in a session variable to track who is using the program
             Session["UserName"] = userName;
+            // if user name exists, this will be true
             bool ifUserNameExists;
+            // if password is correct this will be true (not setup yet)
             bool correctPassword;
-
+            // store connection string in userDb
             SqlConnection userDb = new SqlConnection(SqlDataSource1.ConnectionString);
+            // open the connection
             userDb.Open();
+            // this function is to check and see if the username exists in database. If the scalar value returns >0, ifUserNameExists is set to true
             using (SqlCommand checkCmd = new SqlCommand("select count(*) from [user] where User_Username = @User_Username", userDb))
             {
                 checkCmd.Parameters.AddWithValue("@User_Username", userName);
@@ -72,33 +62,32 @@ namespace ProjectManagement
             }
 
         }
-
+        // if register button is clicked, program goes here
         protected void RegisterBtn_Click(object sender, EventArgs e)
         {
+            // Variable to store username and boolean to store whether or not user name exists
             string userName = NewEmailTxtBox.Text;
-            string password = NewPassTxtBox.Text;
-            string firstName = FNameTxtBox.Text;
-            string lastName = LNameTxtbox.Text;
-            string confirmPW = ConfirmPassTxtBox.Text;
-            Session["UserName"] = userName;
             bool ifUserNameExists;
-
+            // store connection string in userDb
             SqlConnection userDb = new SqlConnection(SqlDataSource1.ConnectionString);
+            // Open database connection
             userDb.Open();
+            // this function is to check and see if the username exists in database. If the scalar value returns >0, ifUserNameExists is set to true
             using (SqlCommand checkCmd = new SqlCommand("select count(*) from username where email = @email", userDb))
             {
                 checkCmd.Parameters.AddWithValue("@email", userName);
                 ifUserNameExists = (int)checkCmd.ExecuteScalar() > 0;
             }
-
+            // if the user name exists, if the user name is blank, or if the email isn't valid, program will enter this if statement
             if (ifUserNameExists || userName == "" || !IsValidEmail(userName))
             {
-
+                //error box set to red and displays message
                 error1.ForeColor = System.Drawing.Color.Red;
                 error1.Text = "Sorry, that user name is already taken, or you left the field blank.";
                 error1.Visible = true;
+                // Close database
                 userDb.Close();
-                // checks email to see if valid. Function is at bottom of code
+                // checks email to see if valid. Function is at bottom of code. The function is called again to diplay an additional message if the email isn't valid. 
                 if (!IsValidEmail(userName))
                 {
                     error2.ForeColor = System.Drawing.Color.Red;
@@ -109,24 +98,20 @@ namespace ProjectManagement
             else
             {
 
-                // create sql command instance
-                SqlCommand cmd = new SqlCommand();
-                cmd.CommandType = System.Data.CommandType.Text;
-                // create sql command
-                cmd.CommandText = "insert into username (email) values (@email)";
-                // add values to sql table
-                cmd.Parameters.AddWithValue("@email", userName);
-                cmd.Connection = userDb;
-
-                // Problem here...Code is going to the catch statement here. 
-
-
+                // Try to add values to sql table  
+                
                 try
                 {
-                    cmd.ExecuteNonQuery();
+                    SqlDataSource1.InsertParameters["email"].DefaultValue = NewEmailTxtBox.Text;
+                    SqlDataSource1.InsertParameters["firstname"].DefaultValue = FNameTxtBox.Text;
+                    SqlDataSource1.InsertParameters["lastname"].DefaultValue = LNameTxtbox.Text;
+                    SqlDataSource1.InsertParameters["password"].DefaultValue = NewPassTxtBox.Text;
+
+                    SqlDataSource1.Insert();
+                    
 
                     error1.ForeColor = System.Drawing.Color.Black;
-                    error1.Text = "User name is accepted!";
+                    error1.Text = "User name is accepted!, Account created.";
                     error1.Visible = true;
 
                     // Response.Redirect("/page2.aspx");
@@ -146,7 +131,7 @@ namespace ProjectManagement
 
             }
 
-
+          
         }
 
         bool IsValidEmail(string email)

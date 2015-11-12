@@ -49,7 +49,28 @@
         <asp:Label ID="error2" runat="server" Text="Label" Visible="False"></asp:Label>
         <br />
         <br />
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:inetConnectionString %>" SelectCommand="SELECT * FROM [username]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:inetConnectionString %>" SelectCommand="SELECT * FROM [username]" DeleteCommand="DELETE FROM [username] WHERE [userid] = @userid" InsertCommand="INSERT INTO [username] ([groupid], [firstname], [lastname], [phonenumber], [email], [password]) VALUES (@groupid, @firstname, @lastname, @phonenumber, @email, @password)" UpdateCommand="UPDATE [username] SET [groupid] = @groupid, [firstname] = @firstname, [lastname] = @lastname, [phonenumber] = @phonenumber, [email] = @email, [password] = @password WHERE [userid] = @userid">
+            <DeleteParameters>
+                <asp:Parameter Name="userid" Type="Int32" />
+            </DeleteParameters>
+            <InsertParameters>
+                <asp:Parameter Name="groupid" Type="Int32" />
+                <asp:Parameter Name="firstname" Type="String" />
+                <asp:Parameter Name="lastname" Type="String" />
+                <asp:Parameter Name="phonenumber" Type="String" />
+                <asp:Parameter Name="email" Type="String" />
+                <asp:Parameter Name="password" Type="String" />
+            </InsertParameters>
+            <UpdateParameters>
+                <asp:Parameter Name="groupid" Type="Int32" />
+                <asp:Parameter Name="firstname" Type="String" />
+                <asp:Parameter Name="lastname" Type="String" />
+                <asp:Parameter Name="phonenumber" Type="String" />
+                <asp:Parameter Name="email" Type="String" />
+                <asp:Parameter Name="password" Type="String" />
+                <asp:Parameter Name="userid" Type="Int32" />
+            </UpdateParameters>
+         </asp:SqlDataSource>
     
     </div>
     </form>
