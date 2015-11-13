@@ -67,6 +67,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CSS\StyleSheet1.css" />
+    <Content Include="Images\abg4.jpg" />
+    <Content Include="Images\bg.jpg" />
+    <Content Include="Images\bg5.jpg" />
+    <Content Include="Images\bg6.jpg" />
     <Content Include="Images\hero.jpg" />
     <Content Include="Images\heroimage.jpg" />
     <Content Include="Login.aspx" />
