@@ -55,10 +55,40 @@ namespace ProjectManagement
             // open the connection
             userDb.Open();
             // this function is to check and see if the username exists in database. If the scalar value returns >0, ifUserNameExists is set to true
-            using (SqlCommand checkCmd = new SqlCommand("select count(*) from [user] where User_Username = @User_Username", userDb))
+            using (SqlCommand checkCmd = new SqlCommand("select count(*) from username where email = @email", userDb))
             {
-                checkCmd.Parameters.AddWithValue("@User_Username", userName);
+                checkCmd.Parameters.AddWithValue("@email", userName);
                 ifUserNameExists = (int)checkCmd.ExecuteScalar() > 0;
+            }
+            // if the username exists in the DB, we now check to see there is a username(email) and password combination that matches
+            if (ifUserNameExists)
+            {
+                using (SqlCommand checkCmd = new SqlCommand("select count(*) from username where email = @email and password = @password", userDb))
+                {
+                    checkCmd.Parameters.AddWithValue("@email", userName);
+                    checkCmd.Parameters.AddWithValue("@password", password);
+
+                    correctPassword = (int)checkCmd.ExecuteScalar() > 0;
+                }
+
+                if (correctPassword)
+                {
+                    Response.Redirect("/page1.aspx");
+                }
+                else
+                {
+                    loginLabel.ForeColor = System.Drawing.Color.Red;
+                    loginLabel.Text = "Incorrect password.";
+                    loginLabel.Visible = true;
+                }
+
+            }
+            // if the username doesnt exists, this code executes
+            else
+            {
+                loginLabel.ForeColor = System.Drawing.Color.Red;
+                loginLabel.Text = "User name not found.";
+                loginLabel.Visible = true;
             }
 
         }
