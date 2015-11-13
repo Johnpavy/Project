@@ -63,6 +63,7 @@ namespace ProjectManagement
             // if the username exists in the DB, we now check to see there is a username(email) and password combination that matches
             if (ifUserNameExists)
             {
+                // check to see if username and pw combo exists
                 using (SqlCommand checkCmd = new SqlCommand("select count(*) from username where email = @email and password = @password", userDb))
                 {
                     checkCmd.Parameters.AddWithValue("@email", userName);
@@ -70,11 +71,12 @@ namespace ProjectManagement
 
                     correctPassword = (int)checkCmd.ExecuteScalar() > 0;
                 }
-
+                // if both match, on to page 1(or whatever we call it)
                 if (correctPassword)
                 {
                     Response.Redirect("/page1.aspx");
                 }
+                // we already confirmed that a username exists at this point so now we know that the password doesn't match
                 else
                 {
                     loginLabel.ForeColor = System.Drawing.Color.Red;
