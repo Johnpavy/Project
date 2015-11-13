@@ -13,13 +13,13 @@ namespace ProjectManagement {
     public partial class Login {
         
         /// <summary>
-        /// form1 control.
+        /// EmailLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Label EmailLbl;
         
         /// <summary>
         /// EmailTxtBox control.
@@ -31,13 +31,13 @@ namespace ProjectManagement {
         protected global::System.Web.UI.WebControls.TextBox EmailTxtBox;
         
         /// <summary>
-        /// EmailLbl control.
+        /// PasswordLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label EmailLbl;
+        protected global::System.Web.UI.WebControls.Label PasswordLbl;
         
         /// <summary>
         /// PasswordTxtBox control.
@@ -49,15 +49,6 @@ namespace ProjectManagement {
         protected global::System.Web.UI.WebControls.TextBox PasswordTxtBox;
         
         /// <summary>
-        /// PasswordLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label PasswordLbl;
-        
-        /// <summary>
         /// loginLabel control.
         /// </summary>
         /// <remarks>
@@ -65,123 +56,6 @@ namespace ProjectManagement {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label loginLabel;
-        
-        /// <summary>
-        /// LoginBtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button LoginBtn;
-        
-        /// <summary>
-        /// SignUpBtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SignUpBtn;
-        
-        /// <summary>
-        /// NewEmailTxtBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox NewEmailTxtBox;
-        
-        /// <summary>
-        /// SignupEmailLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label SignupEmailLbl;
-        
-        /// <summary>
-        /// FNameTxtBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox FNameTxtBox;
-        
-        /// <summary>
-        /// FNameLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label FNameLbl;
-        
-        /// <summary>
-        /// LNameTxtbox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox LNameTxtbox;
-        
-        /// <summary>
-        /// LastNameLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LastNameLbl;
-        
-        /// <summary>
-        /// NewPassTxtBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox NewPassTxtBox;
-        
-        /// <summary>
-        /// NewPasswordLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label NewPasswordLbl;
-        
-        /// <summary>
-        /// ConfirmPassTxtBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ConfirmPassTxtBox;
-        
-        /// <summary>
-        /// ConfirmPWLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ConfirmPWLbl;
-        
-        /// <summary>
-        /// RegisterBtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button RegisterBtn;
         
         /// <summary>
         /// error1 control.
@@ -202,13 +76,22 @@ namespace ProjectManagement {
         protected global::System.Web.UI.WebControls.Label error2;
         
         /// <summary>
-        /// SqlDataSource1 control.
+        /// LoginBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.WebControls.Button LoginBtn;
+        
+        /// <summary>
+        /// SignUpBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button SignUpBtn;
         
         /// <summary>
         /// HyperLink1 control.
@@ -218,5 +101,14 @@ namespace ProjectManagement {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink HyperLink1;
+        
+        /// <summary>
+        /// SqlDataSource1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
     }
 }
