@@ -4,11 +4,19 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <link href="CSS/StyleSheet1.css" rel="stylesheet" />
     <title></title>
+    <style type="text/css">
+        .auto-style1 {
+            text-align: center;
+        }
+    </style>
 </head>
+
 <body>
 
     <form id="form1" runat="server">
+        <div class="auto-style1">
      <div style="text-align: center">
     
         <asp:TextBox ID="EmailTxtBox" runat="server"></asp:TextBox>
@@ -76,6 +84,8 @@
          </asp:SqlDataSource>
     
     </div>
+            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/adminLogin.aspx">Admin Login</asp:HyperLink>
+        </div>
     </form>
 </body>
 </html>

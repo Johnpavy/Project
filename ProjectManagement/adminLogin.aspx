@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="page1.aspx.cs" Inherits="ProjectManagement.page1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="adminLogin.aspx.cs" Inherits="ProjectManagement.page1" %>
 
 <!DOCTYPE html>
 
