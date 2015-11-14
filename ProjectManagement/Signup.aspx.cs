@@ -36,7 +36,7 @@ namespace ProjectManagement
                 ifUserNameExists = (int)checkCmd.ExecuteScalar() > 0;
             }
             // if the user name exists, if the user name is blank, or if the email isn't valid, program will enter this if statement
-            if (ifUserNameExists || userName == "" || !IsValidEmail(userName) || !password.Equals(confirmPW))
+            if (ifUserNameExists || userName == "" || !IsValidEmail(userName) || !password.Equals(confirmPW) || password.Equals(""))
             {
                 //error box set to red and displays message
                 if(ifUserNameExists || userName =="")
