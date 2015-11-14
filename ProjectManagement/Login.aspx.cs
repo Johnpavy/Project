@@ -36,6 +36,7 @@ namespace ProjectManagement
             SqlConnection userDb = new SqlConnection(SqlDataSource1.ConnectionString);
             // open the connection
             userDb.Open();
+            //test
             // this function is to check and see if the username exists in database. If the scalar value returns >0, ifUserNameExists is set to true
             using (SqlCommand checkCmd = new SqlCommand("select count(*) from username where email = @email", userDb))
             {
