@@ -1,32 +1,12 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Login.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="ProjectManagement.Login" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <!DOCTYPE html>
-
-        <div id="menu" class="auto-style1">
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-                            
+    <div id="menu">
+          
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            
+          
             <asp:Label ID="EmailLbl" runat="server" Text="EMAIL" style="font-size: 13px" CssClass="auto-style4"></asp:Label>
-                    <<asp:TextBox ID="EmailTxtBox" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="EmailTxtBox" runat="server"></asp:TextBox>
             &nbsp;&nbsp;&nbsp;
             <br />
             <br />
@@ -84,9 +64,6 @@
 </asp:Content>
 <asp:Content ID="Content2" runat="server" contentplaceholderid="head">
     <style type="text/css">
-        .auto-style1 {
-            color: #FFCCCC;
-        }
         .auto-style3 {
             color: #666666;
         }
