@@ -78,6 +78,10 @@
     <Content Include="packages.config" />
     <Content Include="Login.Master" />
     <Content Include="AdminLogin.aspx" />
+    <Content Include="projects.aspx" />
+    <Content Include="dashboard.aspx" />
+    <Content Include="tasks.aspx" />
+    <Content Include="milestones.aspx" />
     <None Include="Properties\PublishProfiles\Team1Project.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -127,6 +131,34 @@
     </Compile>
     <Compile Include="AdminLogin.aspx.designer.cs">
       <DependentUpon>AdminLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="projects.aspx.cs">
+      <DependentUpon>projects.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="projects.aspx.designer.cs">
+      <DependentUpon>projects.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dashboard.aspx.cs">
+      <DependentUpon>dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dashboard.aspx.designer.cs">
+      <DependentUpon>dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="tasks.aspx.cs">
+      <DependentUpon>tasks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tasks.aspx.designer.cs">
+      <DependentUpon>tasks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="milestones.aspx.cs">
+      <DependentUpon>milestones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="milestones.aspx.designer.cs">
+      <DependentUpon>milestones.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />
