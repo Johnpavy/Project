@@ -22,6 +22,8 @@ namespace ProjectManagement
         {
             // Variable to store username and boolean to store whether or not user name exists
             string userName = NewEmailTxtBox.Text;
+            string password = NewPassTxtBox.Text;
+            string confirmPW = ConfirmPassTxtBox.Text;
             bool ifUserNameExists;
             // store connection string in userDb
             SqlConnection userDb = new SqlConnection(SqlDataSource1.ConnectionString);
@@ -34,7 +36,7 @@ namespace ProjectManagement
                 ifUserNameExists = (int)checkCmd.ExecuteScalar() > 0;
             }
             // if the user name exists, if the user name is blank, or if the email isn't valid, program will enter this if statement
-            if (ifUserNameExists || userName == "" || !IsValidEmail(userName))
+            if (ifUserNameExists || userName == "" || !IsValidEmail(userName) || !password.Equals(confirmPW))
             {
                 //error box set to red and displays message
                 error1.ForeColor = System.Drawing.Color.Red;
@@ -49,14 +51,20 @@ namespace ProjectManagement
                     error2.Text = "Invalid email address.";
                     error2.Visible = true;
                 }
+                if(!password.Equals(confirmPW))
+                {
+                    loginLabel.ForeColor = System.Drawing.Color.Red;
+                    loginLabel.Text = "Passwords don't match";
+                    loginLabel.Visible = true;
+                }
             }
             else
             {
 
                 // Try to add values to sql table  
 
-             //   try
-             //   {
+                try
+                {
                     SqlDataSource1.InsertParameters["email"].DefaultValue = NewEmailTxtBox.Text;
                     SqlDataSource1.InsertParameters["firstname"].DefaultValue = FNameTxtBox.Text;
                     SqlDataSource1.InsertParameters["lastname"].DefaultValue = LNameTxtbox.Text;
@@ -71,19 +79,19 @@ namespace ProjectManagement
                     error1.Visible = true;
 
                     Response.Redirect("/menu.aspx");
-            //    }
-             //   catch
-            //    {
+                }
+                catch
+                {
 
                     error1.ForeColor = System.Drawing.Color.Red;
                     error1.Text = "Error writing into the database";
                     error1.Visible = true;
 
-             //   }
-             //   finally
-            //    {
+                }
+                finally
+                {
                     userDb.Close();
-             //   }
+                }
 
             }
 
