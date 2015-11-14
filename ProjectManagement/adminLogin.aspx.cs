@@ -13,5 +13,10 @@ namespace ProjectManagement
         {
 
         }
+
+        protected void AdminLoginButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
