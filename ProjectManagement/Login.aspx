@@ -54,7 +54,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
     
 
-            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/adminLogin.aspx" CssClass="auto-style3">Admin Login</asp:HyperLink>
+            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/AdminLogin.aspx" CssClass="auto-style3">Admin Login</asp:HyperLink>
         <br />
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:inetConnectionString %>" SelectCommand="SELECT * FROM [username]" DeleteCommand="DELETE FROM [username] WHERE [userid] = @userid" InsertCommand="INSERT INTO [username] ([groupid], [firstname], [lastname], [phonenumber], [email], [password]) VALUES (@groupid, @firstname, @lastname, @phonenumber, @email, @password)" UpdateCommand="UPDATE [username] SET [groupid] = @groupid, [firstname] = @firstname, [lastname] = @lastname, [phonenumber] = @phonenumber, [email] = @email, [password] = @password WHERE [userid] = @userid">
             <DeleteParameters>
