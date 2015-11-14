@@ -39,11 +39,15 @@ namespace ProjectManagement
             if (ifUserNameExists || userName == "" || !IsValidEmail(userName) || !password.Equals(confirmPW))
             {
                 //error box set to red and displays message
-                error1.ForeColor = System.Drawing.Color.Red;
-                error1.Text = "Sorry, that user name is already taken, or you left the field blank.";
-                error1.Visible = true;
-                // Close database
-                userDb.Close();
+                if(ifUserNameExists || userName =="")
+                {
+                    error1.ForeColor = System.Drawing.Color.Red;
+                    error1.Text = "Sorry, that user name is already taken, or you left the field blank.";
+                    error1.Visible = true;
+                }
+                
+            
+                
                 // checks email to see if valid. Function is at bottom of code. The function is called again to diplay an additional message if the email isn't valid. 
                 if (!IsValidEmail(userName))
                 {
@@ -57,6 +61,7 @@ namespace ProjectManagement
                     loginLabel.Text = "Passwords don't match";
                     loginLabel.Visible = true;
                 }
+                userDb.Close();
             }
             else
             {
