@@ -16,6 +16,12 @@ namespace ProjectManagement
 
         protected void AdminLoginButton_Click(object sender, EventArgs e)
         {
+            string adminUser = AdminUserName.Text;
+            string password = AdminPassword.Text;
+
+
+
+
             Response.Redirect("AdminPage.aspx");
         }
     }
