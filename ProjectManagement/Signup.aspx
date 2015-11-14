@@ -1,15 +1,20 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Login.Master" AutoEventWireup="true" CodeBehind="Signup.aspx.cs" Inherits="ProjectManagement.Signup" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="menu" class="auto-style1">
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:inetConnectionString %>" SelectCommand="SELECT * FROM [username]" DeleteCommand="DELETE FROM [username] WHERE [userid] = @userid" InsertCommand="INSERT INTO [username] ([groupid], [firstname], [lastname], [phonenumber], [email], [password]) VALUES (@groupid, @firstname, @lastname, @phonenumber, @email, @password)" UpdateCommand="UPDATE [username] SET [groupid] = @groupid, [firstname] = @firstname, [lastname] = @lastname, [phonenumber] = @phonenumber, [email] = @email, [password] = @password WHERE [userid] = @userid">
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:inetConnectionString %>" SelectCommand="SELECT * FROM [username]" ConflictDetection="CompareAllValues" DeleteCommand="DELETE FROM [username] WHERE [userid] = @original_userid AND [groupid] = @original_groupid AND (([firstname] = @original_firstname) OR ([firstname] IS NULL AND @original_firstname IS NULL)) AND (([lastname] = @original_lastname) OR ([lastname] IS NULL AND @original_lastname IS NULL)) AND (([email] = @original_email) OR ([email] IS NULL AND @original_email IS NULL)) AND (([password] = @original_password) OR ([password] IS NULL AND @original_password IS NULL))" InsertCommand="INSERT INTO [username] ([userid], [groupid], [firstname], [lastname], [email], [password]) VALUES (@userid, @groupid, @firstname, @lastname, @email, @password)" OldValuesParameterFormatString="original_{0}" UpdateCommand="UPDATE [username] SET [groupid] = @groupid, [firstname] = @firstname, [lastname] = @lastname, [email] = @email, [password] = @password WHERE [userid] = @original_userid AND [groupid] = @original_groupid AND (([firstname] = @original_firstname) OR ([firstname] IS NULL AND @original_firstname IS NULL)) AND (([lastname] = @original_lastname) OR ([lastname] IS NULL AND @original_lastname IS NULL)) AND (([email] = @original_email) OR ([email] IS NULL AND @original_email IS NULL)) AND (([password] = @original_password) OR ([password] IS NULL AND @original_password IS NULL))">
             <DeleteParameters>
-                <asp:Parameter Name="userid" Type="Int32" />
+                <asp:Parameter Name="original_userid" Type="Int32" />
+                <asp:Parameter Name="original_groupid" Type="Int32" />
+                <asp:Parameter Name="original_firstname" Type="String" />
+                <asp:Parameter Name="original_lastname" Type="String" />
+                <asp:Parameter Name="original_email" Type="String" />
+                <asp:Parameter Name="original_password" Type="String" />
             </DeleteParameters>
             <InsertParameters>
+                <asp:Parameter Name="userid" Type="Int32" />
                 <asp:Parameter Name="groupid" Type="Int32" />
                 <asp:Parameter Name="firstname" Type="String" />
                 <asp:Parameter Name="lastname" Type="String" />
-                <asp:Parameter Name="phonenumber" Type="String" />
                 <asp:Parameter Name="email" Type="String" />
                 <asp:Parameter Name="password" Type="String" />
             </InsertParameters>
@@ -17,10 +22,14 @@
                 <asp:Parameter Name="groupid" Type="Int32" />
                 <asp:Parameter Name="firstname" Type="String" />
                 <asp:Parameter Name="lastname" Type="String" />
-                <asp:Parameter Name="phonenumber" Type="String" />
                 <asp:Parameter Name="email" Type="String" />
                 <asp:Parameter Name="password" Type="String" />
-                <asp:Parameter Name="userid" Type="Int32" />
+                <asp:Parameter Name="original_userid" Type="Int32" />
+                <asp:Parameter Name="original_groupid" Type="Int32" />
+                <asp:Parameter Name="original_firstname" Type="String" />
+                <asp:Parameter Name="original_lastname" Type="String" />
+                <asp:Parameter Name="original_email" Type="String" />
+                <asp:Parameter Name="original_password" Type="String" />
             </UpdateParameters>
          </asp:SqlDataSource>
     
