@@ -57,9 +57,9 @@ namespace ProjectManagement
                 // if both match, on to page 1(or whatever we call it)
                 if (correctPassword)
                 {
-                    // I put admin login as a placeholder for now
+                    // menu redirection after login
  
-                    Response.Redirect("/adminLogin.aspx");
+                    Response.Redirect("/menu.aspx");
                 }
                 // we already confirmed that a username exists at this point so now we know that the password doesn't match
                 else
