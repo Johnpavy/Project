@@ -29,7 +29,20 @@
 	        text-shadow: none;
         }
 
-        #menu a
+        #signup
+        {
+            margin-top: 165px;
+            margin-right: 0px;
+            margin-left: 0px;
+            margin-bottom: 0px;
+	        font-size: 12px;
+	        font-family: 'Helvetica Neue LT Pro';
+	        font-weight: bold;
+	        text-align: center;
+	        text-shadow: none;
+        }
+
+        #menu a, #signup a
         {
             text-decoration: none;
 	        font-size: 14px;
@@ -41,7 +54,7 @@
 	        text-shadow: none;
         }
 
-        #menu a:hover
+        #menu a:hover,#signup a:hover
         {
 	        color: #fff;
 	        border-radius: 10px;
@@ -51,7 +64,7 @@
             color: #ffffff;
         }
 
-        #menu *
+        #menu *,#signup *
         {
             text-decoration: none;
 	        font-size: 12px;
