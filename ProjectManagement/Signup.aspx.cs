@@ -61,6 +61,7 @@ namespace ProjectManagement
                     SqlDataSource1.InsertParameters["firstname"].DefaultValue = FNameTxtBox.Text;
                     SqlDataSource1.InsertParameters["lastname"].DefaultValue = LNameTxtbox.Text;
                     SqlDataSource1.InsertParameters["password"].DefaultValue = NewPassTxtBox.Text;
+                    SqlDataSource1.InsertParameters["groupid"].DefaultValue = "1";
 
                     SqlDataSource1.Insert();
 
