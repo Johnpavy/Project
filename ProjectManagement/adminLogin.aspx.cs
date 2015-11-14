@@ -67,7 +67,7 @@ namespace ProjectManagement
             else
             {
                 loginLabel.ForeColor = System.Drawing.Color.Red;
-                loginLabel.Text = "User name not found.";
+                loginLabel.Text = "Admin user name not found.";
                 loginLabel.Visible = true;
             }
 
