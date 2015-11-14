@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ProjectManagement
-{
-
-
-    public partial class Signup
-    {
-
+namespace ProjectManagement {
+    
+    
+    public partial class Signup {
+        
         /// <summary>
         /// SqlDataSource1 control.
         /// </summary>
@@ -22,7 +20,7 @@ namespace ProjectManagement
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
-
+        
         /// <summary>
         /// SignupEmailLbl control.
         /// </summary>
@@ -31,7 +29,7 @@ namespace ProjectManagement
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label SignupEmailLbl;
-
+        
         /// <summary>
         /// NewEmailTxtBox control.
         /// </summary>
@@ -40,7 +38,7 @@ namespace ProjectManagement
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox NewEmailTxtBox;
-
+        
         /// <summary>
         /// FNameLbl control.
         /// </summary>
@@ -49,7 +47,7 @@ namespace ProjectManagement
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label FNameLbl;
-
+        
         /// <summary>
         /// FNameTxtBox control.
         /// </summary>
@@ -58,7 +56,7 @@ namespace ProjectManagement
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox FNameTxtBox;
-
+        
         /// <summary>
         /// LastNameLbl control.
         /// </summary>
@@ -67,7 +65,7 @@ namespace ProjectManagement
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label LastNameLbl;
-
+        
         /// <summary>
         /// LNameTxtbox control.
         /// </summary>
@@ -76,7 +74,7 @@ namespace ProjectManagement
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox LNameTxtbox;
-
+        
         /// <summary>
         /// NewPasswordLbl control.
         /// </summary>
@@ -85,7 +83,7 @@ namespace ProjectManagement
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label NewPasswordLbl;
-
+        
         /// <summary>
         /// NewPassTxtBox control.
         /// </summary>
@@ -94,7 +92,7 @@ namespace ProjectManagement
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox NewPassTxtBox;
-
+        
         /// <summary>
         /// ConfirmPWLbl control.
         /// </summary>
@@ -103,7 +101,7 @@ namespace ProjectManagement
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label ConfirmPWLbl;
-
+        
         /// <summary>
         /// ConfirmPassTxtBox control.
         /// </summary>
@@ -112,7 +110,7 @@ namespace ProjectManagement
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox ConfirmPassTxtBox;
-
+        
         /// <summary>
         /// loginLabel control.
         /// </summary>
@@ -121,7 +119,7 @@ namespace ProjectManagement
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label loginLabel;
-
+        
         /// <summary>
         /// error1 control.
         /// </summary>
@@ -130,7 +128,7 @@ namespace ProjectManagement
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label error1;
-
+        
         /// <summary>
         /// error2 control.
         /// </summary>
@@ -139,7 +137,7 @@ namespace ProjectManagement
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label error2;
-
+        
         /// <summary>
         /// RegisterBtn control.
         /// </summary>
@@ -148,7 +146,7 @@ namespace ProjectManagement
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button RegisterBtn;
-
+        
         /// <summary>
         /// HyperLink2 control.
         /// </summary>
