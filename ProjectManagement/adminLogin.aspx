@@ -1,6 +1,26 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Login.Master" AutoEventWireup="true" CodeBehind="AdminLogin.aspx.cs" Inherits="ProjectManagement.WebForm2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="menu">
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:inetConnectionString %>" SelectCommand="SELECT * FROM [username]" DeleteCommand="DELETE FROM [username] WHERE [userid] = @userid" InsertCommand="INSERT INTO [username] ([groupid], [firstname], [lastname], [email], [password]) VALUES (@groupid, @firstname, @lastname, @email, @password)" UpdateCommand="UPDATE [username] SET [groupid] = @groupid, [firstname] = @firstname, [lastname] = @lastname, [email] = @email, [password] = @password WHERE [userid] = @userid">
+        <DeleteParameters>
+            <asp:Parameter Name="userid" Type="Int32" />
+        </DeleteParameters>
+        <InsertParameters>
+            <asp:Parameter Name="groupid" Type="Int32" />
+            <asp:Parameter Name="firstname" Type="String" />
+            <asp:Parameter Name="lastname" Type="String" />
+            <asp:Parameter Name="email" Type="String" />
+            <asp:Parameter Name="password" Type="String" />
+        </InsertParameters>
+        <UpdateParameters>
+            <asp:Parameter Name="groupid" Type="Int32" />
+            <asp:Parameter Name="firstname" Type="String" />
+            <asp:Parameter Name="lastname" Type="String" />
+            <asp:Parameter Name="email" Type="String" />
+            <asp:Parameter Name="password" Type="String" />
+            <asp:Parameter Name="userid" Type="Int32" />
+        </UpdateParameters>
+        </asp:SqlDataSource>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EMAIL
         <asp:TextBox ID="AdminUserName" runat="server"></asp:TextBox>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -23,7 +43,6 @@
         <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Login.aspx" CssClass="auto-style3">Return Home</asp:HyperLink>
             <br />
     </div>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:inetConnectionString %>" SelectCommand="SELECT * FROM [username]"></asp:SqlDataSource>
     <br />
     <br />
 </asp:Content>
