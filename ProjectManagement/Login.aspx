@@ -63,12 +63,4 @@
         </div>
 </asp:Content>
 <asp:Content ID="Content2" runat="server" contentplaceholderid="head">
-    <style type="text/css">
-        .auto-style3 {
-            color: #666666;
-        }
-        .auto-style4 {
-            color: #000000;
-        }
-    </style>
 </asp:Content>
