@@ -55,8 +55,8 @@ namespace ProjectManagement
 
                 // Try to add values to sql table  
 
-                try
-                {
+             //   try
+             //   {
                     SqlDataSource1.InsertParameters["email"].DefaultValue = NewEmailTxtBox.Text;
                     SqlDataSource1.InsertParameters["firstname"].DefaultValue = FNameTxtBox.Text;
                     SqlDataSource1.InsertParameters["lastname"].DefaultValue = LNameTxtbox.Text;
@@ -71,19 +71,19 @@ namespace ProjectManagement
                     error1.Visible = true;
 
                     Response.Redirect("/menu.aspx");
-                }
-                catch
-                {
+            //    }
+             //   catch
+            //    {
 
                     error1.ForeColor = System.Drawing.Color.Red;
                     error1.Text = "Error writing into the database";
                     error1.Visible = true;
 
-                }
-                finally
-                {
+             //   }
+             //   finally
+            //    {
                     userDb.Close();
-                }
+             //   }
 
             }
 
