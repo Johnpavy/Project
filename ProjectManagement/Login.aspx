@@ -26,7 +26,7 @@
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             
             <asp:Label ID="EmailLbl" runat="server" Text="EMAIL" style="font-size: 13px" CssClass="auto-style4"></asp:Label>
-                    </span><asp:TextBox ID="EmailTxtBox" runat="server"></asp:TextBox>
+                    <<asp:TextBox ID="EmailTxtBox" runat="server"></asp:TextBox>
             &nbsp;&nbsp;&nbsp;
             <br />
             <br />

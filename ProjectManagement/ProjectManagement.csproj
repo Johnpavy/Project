@@ -66,6 +66,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdminLogin.aspx" />
     <Content Include="CSS\StyleSheet1.css" />
     <Content Include="Images\abg4.jpg" />
     <Content Include="Images\bg.jpg" />
@@ -86,24 +87,24 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="adminLogin.aspx" />
     <Content Include="Signup.aspx" />
+    <Content Include="CSS\StyleSheet2.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminLogin.aspx.cs">
+      <DependentUpon>AdminLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminLogin.aspx.designer.cs">
+      <DependentUpon>AdminLogin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="adminLogin.aspx.cs">
-      <DependentUpon>adminLogin.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="adminLogin.aspx.designer.cs">
-      <DependentUpon>adminLogin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Login.Master.cs">
