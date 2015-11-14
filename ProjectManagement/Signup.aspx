@@ -24,21 +24,6 @@
             </UpdateParameters>
          </asp:SqlDataSource>
     
-
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="SignupEmailLbl" runat="server" Text="EMAIL" Visible="True" CssClass="auto-style1"></asp:Label>
             <asp:TextBox ID="NewEmailTxtBox" runat="server" Visible="True"></asp:TextBox>
             <br />
