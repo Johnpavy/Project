@@ -76,7 +76,6 @@
     <Content Include="Images\heroimage.jpg" />
     <Content Include="Images\main.png" />
     <Content Include="Login.aspx" />
-    <Content Include="menu.aspx" />
     <Content Include="packages.config" />
     <Content Include="Login.Master" />
     <Content Include="AdminLogin.aspx" />
@@ -85,6 +84,7 @@
     <Content Include="tasks.aspx" />
     <Content Include="milestones.aspx" />
     <Content Include="Admin.master" />
+    <Content Include="Menu.aspx" />
     <None Include="Properties\PublishProfiles\Team1Project.pubxml" />
     <Content Include="Menu.Master" />
     <None Include="Web.Debug.config">
@@ -120,13 +120,6 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="menu.aspx.cs">
-      <DependentUpon>menu.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="menu.aspx.designer.cs">
-      <DependentUpon>menu.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Login.Master.cs">
@@ -184,6 +177,13 @@
     </Compile>
     <Compile Include="milestones.aspx.designer.cs">
       <DependentUpon>milestones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.aspx.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Menu.aspx.designer.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />

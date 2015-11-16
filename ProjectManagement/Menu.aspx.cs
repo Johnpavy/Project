@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace ProjectManagement
 {
-    public partial class menu : System.Web.UI.Page
+    public partial class Menu : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
