@@ -1,0 +1,98 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Menu.Master.cs" Inherits="ProjectManagement.Site2" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+        html
+        { 
+			    background: url(images/main.png) center fixed;
+                background-repeat: no-repeat;
+	            background-size: 100% 100%;
+	    }
+
+        container
+        {
+            width: 1024px;
+        }
+
+        #left
+        {
+            width: 256px;
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-left: 0px;
+            margin-bottom: 0px;
+	        font-size: 16px;
+	        font-family: 'Helvetica Neue LT Pro';
+	        font-weight: bold;
+	        text-align: left;
+	        text-shadow: none;
+            float: left;
+        }
+        
+        #right
+        {
+            width: 768px;
+            margin-top: 250px;
+	        margin-right: 0px;
+	        margin-left: 300px;
+	        margin-bottom: 0px;
+	        font-size: 16px;
+	        font-family: 'Helvetica Neue LT Pro';
+	        font-weight: bold;
+	        text-align: left;
+	        text-shadow: none;
+        }
+
+        #left a, #right a
+        {
+            text-decoration: none;
+	        font-size: 16px;
+	        color: #334018;
+	        padding: 8px 8px 8px 8px;
+	        font-family: 'Helvetica Neue LT Pro';
+            font-weight: bold;
+	        text-align: center;
+	        text-shadow: none;
+        }
+
+        #left a:hover,#right a:hover
+        {
+	        color: #7ba02e;
+	        border-radius: 10px;
+        }
+
+        p,#footer
+        {
+            color: #ffffff;
+        }
+
+        #menu *,#signup *
+        {
+            text-decoration: none;
+	        font-size: 12px;
+	        padding: 2px 2px 2px 2px;
+	        font-family: 'Helvetica Neue LT Pro';
+            font-weight: bold;
+	        text-align: left;
+            color: #000;
+	        text-shadow: none;
+        }
+
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

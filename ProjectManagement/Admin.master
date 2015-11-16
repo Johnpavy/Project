@@ -1,0 +1,19 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Login.Master" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="ProjectManagement.Admin" %>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+    </asp:ContentPlaceHolder>
+        <style>
+        html
+        { 
+			    background: url(images/bg5.jpg) center fixed;
+                background-repeat: no-repeat;
+	            background-size: 100% 100%;
+	    }
+
+    </style>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+        </asp:ContentPlaceHolder>
+</asp:Content>
