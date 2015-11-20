@@ -48,7 +48,11 @@
 	        text-align: left;
 	        text-shadow: none;
         }
+        #calendar
+        {
+            float: right;
 
+        }
         #left a, #right a
         {
             text-decoration: none;

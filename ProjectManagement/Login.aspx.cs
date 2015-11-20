@@ -26,8 +26,10 @@ namespace ProjectManagement
             // Store username in a variable to check and see if its available
             string userName = EmailTxtBox.Text;
             string password = PasswordTxtBox.Text;
+ 
             // Store username in a session variable to track who is using the program
             Session["UserName"] = userName;
+           
             // if user name exists, this will be true
             bool ifUserNameExists;
             // if password is correct this will be true (not setup yet)
@@ -53,12 +55,17 @@ namespace ProjectManagement
                     checkCmd.Parameters.AddWithValue("@password", password);
 
                     correctPassword = (int)checkCmd.ExecuteScalar() > 0;
+                   /* if (correctPassword)
+                    {
+                        string userID = (string)checkCmd.ExecuteScalar();
+                        Session["UserID"] = userID;
+
+                    }*/
                 }
                 // if both match, on to page 1(or whatever we call it)
                 if (correctPassword)
                 {
                     // menu redirection after login
- 
                     Response.Redirect("/menu.aspx");
                 }
                 // we already confirmed that a username exists at this point so now we know that the password doesn't match
