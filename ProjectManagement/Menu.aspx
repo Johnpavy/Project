@@ -3,6 +3,9 @@
 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:inetConnectionString %>" SelectCommand="SELECT * FROM [projects]"></asp:SqlDataSource>
 <!DOCTYPE html>
 <div id="container">
+    <div id="top">
+        <asp:Label ID="greeting" runat="server" Text="Welcome"></asp:Label>
+    </div>
    <div id="left">
         <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/dashboard.aspx">DASHBOARD</asp:HyperLink>
 
@@ -29,8 +32,6 @@
         </asp:GridView>
     </div>
 </div>
-
-</body>
 </asp:Content>
 <asp:Content ID="Content2" runat="server" contentplaceholderid="head">
 </asp:Content>

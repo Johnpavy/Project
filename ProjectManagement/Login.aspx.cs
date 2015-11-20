@@ -28,7 +28,7 @@ namespace ProjectManagement
             string password = PasswordTxtBox.Text;
  
             // Store username in a session variable to track who is using the program
-            Session["UserName"] = userName;
+            Session["user"] = userName;
            
             // if user name exists, this will be true
             bool ifUserNameExists;

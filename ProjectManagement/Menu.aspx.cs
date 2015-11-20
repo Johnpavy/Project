@@ -11,7 +11,8 @@ namespace ProjectManagement
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            //Preload the data in the read only boxes for user, email
+            greeting.Text = "Welcome back, " + (string)Session["user"];
         }
     }
 }
