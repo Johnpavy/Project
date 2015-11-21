@@ -106,8 +106,12 @@
     </style>
 </head>
 <body>
+
     <form id="form1" runat="server">
-         <div id="left">
+        <div id ="top">
+
+        </div>
+        <div id="left">
         <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/dashboard.aspx">DASHBOARD</asp:HyperLink>
 
         <p>
@@ -117,12 +121,13 @@
         <p>
             <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/tasks.aspx">TASKS</asp:HyperLink>
         </p>
-        <div id ="calendar">
+         </div>
+        <div id ="right">
 
 
         </div>
         <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/AdminLogin.aspx">ADMIN</asp:HyperLink>
-    </div>
+   
     <div style="margin-left: 278px">
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             test

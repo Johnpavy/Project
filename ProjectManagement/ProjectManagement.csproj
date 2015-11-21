@@ -83,9 +83,9 @@
     <Content Include="projects.aspx" />
     <Content Include="dashboard.aspx" />
     <Content Include="tasks.aspx" />
-    <Content Include="milestones.aspx" />
     <Content Include="Admin.master" />
     <Content Include="Menu.aspx" />
+    <Content Include="milestones.aspx" />
     <None Include="Properties\PublishProfiles\Team1Project.pubxml" />
     <Content Include="Menu.Master" />
     <None Include="Web.Debug.config">
@@ -179,19 +179,19 @@
     <Compile Include="tasks.aspx.designer.cs">
       <DependentUpon>tasks.aspx</DependentUpon>
     </Compile>
-    <Compile Include="milestones.aspx.cs">
-      <DependentUpon>milestones.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="milestones.aspx.designer.cs">
-      <DependentUpon>milestones.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Menu.aspx.cs">
       <DependentUpon>Menu.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Menu.aspx.designer.cs">
       <DependentUpon>Menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="milestones.aspx.cs">
+      <DependentUpon>milestones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="milestones.aspx.designer.cs">
+      <DependentUpon>milestones.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />

@@ -57,7 +57,15 @@ namespace ProjectManagement
                     correctPassword = (int)checkCmd.ExecuteScalar() > 0;
                     if (correctPassword)
                     {
-                        int userID = (int)checkCmd.ExecuteScalar();
+                        SqlCommand getID = new SqlCommand();
+                        getID.CommandText = "select userid from username where email = @email";
+                        getID.Parameters.AddWithValue("@email", userName);
+                        getID.Connection = userDb;
+                        SqlDataReader rd = getID.ExecuteReader();
+                        rd.Read();
+                        //Int32 userIDprimitive;
+                        var userIDprimitive = rd.GetInt32(0);
+                        String userID = userIDprimitive.ToString();
                         Session["UserID"] = userID;
 
                     }
