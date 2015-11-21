@@ -64,8 +64,6 @@ namespace ProjectManagement
                 // if both match, on to page 1(or whatever we call it)
                 if (correctPassword)
                 {
-                    SqlDataSource1.SelectCommand = "SELECT[userid] FROM[username] WHERE([email] = '" + userName + "')";
-                    SqlDataSource1.SelectParameters.Add("userid", Convert.ToString(Session["id"]));
                     // menu redirection after login
                     Response.Redirect("/menu.aspx");
                 }
