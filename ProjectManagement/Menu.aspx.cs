@@ -13,13 +13,13 @@ namespace ProjectManagement
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-                SqlDataSource1.SelectCommand = "SELECT firstname FROM username WHERE email = @email";
-                SqlDataSource1.SelectParameters.Add("firstname", Convert.ToString(Session["name"]));
+                //SqlDataSource1.SelectCommand = "SELECT firstname FROM username WHERE email = userName";
+                //SqlDataSource1.SelectParameters.Add("firstname", Convert.ToString(Session["name"]));
 
                 //string query = "SELECT firstname FROM username WHERE email = @email";
                 //Present greeting on login page
                 //greeting.Text = "Welcome back, " + (string)Session["user"];
-                greeting.Text = "Welcome back, " + Session["name"];
+                greeting.Text = "Welcome back, " + (string)Session["name"];
         }
     }
 }
