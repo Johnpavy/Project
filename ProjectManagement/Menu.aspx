@@ -6,22 +6,7 @@
     <div id="top">
         <asp:Label ID="greeting" runat="server" Text="Welcome"></asp:Label>
     </div>
-   <div id="left">
-        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/dashboard.aspx">DASHBOARD</asp:HyperLink>
-
-        <p>
-            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/projects.aspx">PROJECTS</asp:HyperLink>
-        </p>
-        <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/milestones.aspx">MILESTONES</asp:HyperLink>
-        <p>
-            <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/tasks.aspx">TASKS</asp:HyperLink>
-        </p>
-        <div id ="calendar">
-
-
-        </div>
-        <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/AdminLogin.aspx">ADMIN</asp:HyperLink>
-    </div>
+  
     <div id="right">
         <asp:GridView ID="GridView1" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="projectid" DataSourceID="SqlDataSource1">
             <Columns>
