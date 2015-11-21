@@ -28,7 +28,6 @@ namespace ProjectManagement
             string firstname = read.GetString(0);
             //Present greeting on login page
             greeting.Text = "Welcome back, " + firstname;
-            userDb.Close();
         }
     }
 }
