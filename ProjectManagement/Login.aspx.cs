@@ -29,7 +29,7 @@ namespace ProjectManagement
  
             // Store username in a session variable to track who is using the program
             Session["user"] = userName;
-           
+            
             // if user name exists, this will be true
             bool ifUserNameExists;
             // if password is correct this will be true (not setup yet)
@@ -55,12 +55,12 @@ namespace ProjectManagement
                     checkCmd.Parameters.AddWithValue("@password", password);
 
                     correctPassword = (int)checkCmd.ExecuteScalar() > 0;
-                   /* if (correctPassword)
+                    if (correctPassword)
                     {
-                        string userID = (string)checkCmd.ExecuteScalar();
+                        int userID = (int)checkCmd.ExecuteScalar();
                         Session["UserID"] = userID;
 
-                    }*/
+                    }
                 }
                 // if both match, on to page 1(or whatever we call it)
                 if (correctPassword)
