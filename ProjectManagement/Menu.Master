@@ -112,7 +112,7 @@
 
         </div>
         <div id="left">
-        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/dashboard.aspx">DASHBOARD</asp:HyperLink>
+        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Menu.aspx">DASHBOARD</asp:HyperLink>
 
         <p>
             <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/projects.aspx">PROJECTS</asp:HyperLink>

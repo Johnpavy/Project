@@ -8,6 +8,11 @@
     </div>
   
     <div id="right">
+        <br />
+        <asp:Calendar ID="Calendar1" runat="server"></asp:Calendar>
+        <br />
+        <br />
+        <br />
         <asp:GridView ID="GridView1" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="projectid" DataSourceID="SqlDataSource1">
             <Columns>
                 <asp:BoundField DataField="description" HeaderText="description" SortExpression="description" />
