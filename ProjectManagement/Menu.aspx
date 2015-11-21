@@ -9,7 +9,16 @@
   
     <div id="right">
         <br />
-        <asp:Calendar ID="Calendar1" runat="server"></asp:Calendar>
+        <asp:Calendar ID="Calendar1" runat="server" BackColor="#55FFCC" BorderColor="#55CC66" BorderWidth="1px" DayNameFormat="Short" Font-Names="Verdana" Font-Size="8pt" ForeColor="#003399" Height="300px" ShowGridLines="True" Width="700px" OnDayRender="Calendar1_DayRender" OnSelectionChanged="Calendar1_SelectionChanged" OnVisibleMonthChanged="Calendar1_VisibleMonthChanged">
+            <DayHeaderStyle BackColor="#00CC66" Font-Bold="True" Height="1px" BorderStyle="Solid" Font-Overline="False" Font-Underline="False" ForeColor="Blue" />
+            <NextPrevStyle Font-Size="9pt" ForeColor="#AAFFCC" />
+            <OtherMonthDayStyle ForeColor="#666666" Font-Strikeout="True" />
+            <SelectedDayStyle BackColor="#00CCFF" Font-Bold="True" />
+            <SelectorStyle BackColor="#44FFFF" />
+            <TitleStyle BackColor="#008888" Font-Bold="True" Font-Size="9pt" ForeColor="#40FFCC" />
+            <TodayDayStyle BackColor="#70A0FF" ForeColor="White" />
+        </asp:Calendar>
+        <asp:TextBox ID="taskTxt" runat="server" Height="108px" ReadOnly="True" TextMode="MultiLine" Width="400px"></asp:TextBox>
         <br />
         <br />
         <br />
