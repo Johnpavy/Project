@@ -65,6 +65,9 @@ namespace ProjectManagement
                 // if both match, on to page 1(or whatever we call it)
                 if (correctPassword)
                 {
+                    //SqlDataSource1.SelectCommand = "SELECT firstname FROM username WHERE email = @email";
+                    //SqlDataSource1.SelectParameters.Add("firstname", Convert.ToString(Session["name"]));
+
                     // menu redirection after login
                     Response.Redirect("/menu.aspx");
                 }

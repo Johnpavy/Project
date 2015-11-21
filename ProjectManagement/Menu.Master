@@ -18,11 +18,19 @@
         container
         {
             width: 1024px;
+            height: 832px;
+        }
+
+        #top
+        {
+            height: 256px;
+            text-align: right;
         }
 
         #left
         {
             width: 256px;
+            height: 512px;
             margin-top: 0px;
             margin-right: 0px;
             margin-left: 0px;
@@ -34,20 +42,27 @@
 	        text-shadow: none;
             float: left;
         }
-        
-        #right
-        {
+
+        #right {
             width: 768px;
-            margin-top: 250px;
-	        margin-right: 0px;
-	        margin-left: 300px;
-	        margin-bottom: 0px;
-	        font-size: 16px;
-	        font-family: 'Helvetica Neue LT Pro';
-	        font-weight: bold;
-	        text-align: left;
-	        text-shadow: none;
+            height: 512px;
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-left: 300px;
+            margin-bottom: 0px;
+            font-size: 16px;
+            font-family: 'Helvetica Neue LT Pro';
+            font-weight: bold;
+            text-align: left;
+            text-shadow: none;
         }
+
+        #footer
+        {
+            height: 64px;
+            text-align: center;
+        }
+        
         #calendar
         {
             float: right;
@@ -71,7 +86,7 @@
 	        border-radius: 10px;
         }
 
-        p,#footer
+        p
         {
             color: #ffffff;
         }
@@ -94,7 +109,7 @@
     <form id="form1" runat="server">
     <div>
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        
+            test
         </asp:ContentPlaceHolder>
     </div>
     </form>
