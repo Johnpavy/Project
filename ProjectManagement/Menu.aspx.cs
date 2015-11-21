@@ -13,19 +13,22 @@ namespace ProjectManagement
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //SqlDataSource1.SelectCommand = "SELECT firstname FROM username WHERE email = userName";
-            //SqlDataSource1.SelectParameters.Add("firstname", Convert.ToString(Session["name"]));
+            // store connection string in userDb
+            SqlConnection userDb = new SqlConnection(SqlDataSource1.ConnectionString);
+            // open the connection
+            userDb.Open();
 
-            //string query = "SELECT firstname FROM username WHERE email = @email";
+            string id = (string)Session["UserID"];
+            SqlCommand getID = new SqlCommand();
+            getID.CommandText = "SELECT firstname FROM username WHERE userid = @id";
+            getID.Parameters.AddWithValue("@id", id);
+            getID.Connection = userDb;
+            SqlDataReader read = getID.ExecuteReader();
+            read.Read();
+            string firstname = read.GetString(0);
             //Present greeting on login page
-            //greeting.Text = "Welcome back, " + (string)Session["user"];
-
-            //string id = Session["UserID"].ToString();
-            //SqlDataSource1.SelectCommand = "SELECT firstname FROM username WHERE userid = '10'";
-            //SqlDataSource1.SelectParameters.Add("firstname", Convert.ToString(Session["name"]));
-            Session["id"] = SqlDataSource1.SelectCommand = "SELECT userid FROM username WHERE email = 'admin@slashcrunch.com'";
-            //SqlDataSource1.SelectParameters.Add("userid", Convert.ToString(Session["id"]));
-            greeting.Text = "Welcome back, " + Session["id"];
+            greeting.Text = "Welcome back, " + firstname;
+            userDb.Close();
         }
     }
 }
