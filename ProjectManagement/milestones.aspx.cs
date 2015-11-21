@@ -13,6 +13,7 @@ namespace ProjectManagement
         {
             string userID = (string)Session["UserID"];
             Label1.Text = userID;
+            
         }
     }
 }

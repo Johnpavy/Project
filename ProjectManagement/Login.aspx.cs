@@ -57,6 +57,7 @@ namespace ProjectManagement
                     correctPassword = (int)checkCmd.ExecuteScalar() > 0;
                     if (correctPassword)
                     {
+                         
                         SqlCommand getID = new SqlCommand();
                         getID.CommandText = "select userid from username where email = @email";
                         getID.Parameters.AddWithValue("@email", userName);
@@ -67,25 +68,19 @@ namespace ProjectManagement
                         var userIDprimitive = rd.GetInt32(0);
                         String userID = userIDprimitive.ToString();
                         Session["UserID"] = userID;
-
+                        // menu redirection after login
+                        Response.Redirect("/menu.aspx");
+                    }
+                    else
+                    {
+                        loginLabel.ForeColor = System.Drawing.Color.Red;
+                        loginLabel.Text = "Incorrect password.";
+                        loginLabel.Visible = true;
                     }
                 }
-                // if both match, on to page 1(or whatever we call it)
-                if (correctPassword)
-                {
-                    //SqlDataSource1.SelectCommand = "SELECT firstname FROM username WHERE email = @email";
-                    //SqlDataSource1.SelectParameters.Add("firstname", Convert.ToString(Session["name"]));
+                
+               
 
-                    // menu redirection after login
-                    Response.Redirect("/menu.aspx");
-                }
-                // we already confirmed that a username exists at this point so now we know that the password doesn't match
-                else
-                {
-                    loginLabel.ForeColor = System.Drawing.Color.Red;
-                    loginLabel.Text = "Incorrect password.";
-                    loginLabel.Visible = true;
-                }
 
             }
             // if the username doesnt exists, this code executes
