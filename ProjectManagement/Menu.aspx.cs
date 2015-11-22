@@ -88,8 +88,10 @@ namespace ProjectManagement
             String connString = userDb.ConnectionString;
             SqlConnection dbConnection = new SqlConnection(connString);
             String query;
+
             //query = "SELECT duedate FROM milestone INNER JOIN task ON task.milestoneid = milestone.milestoneid WHERE duedate >= @firstDate AND duedate < @lastDate";
-            query = "SELECT duedate FROM projects  WHERE duedate >= @firstDate AND duedate < @lastDate";
+            query = "SELECT duedate FROM projects WHERE duedate >= @firstDate AND duedate < @lastDate";
+            
            /* query = "SELECT HolidayDate FROM Holidays " + _
         " WHERE HolidayDate >= @firstDate AND HolidayDate < @lastDate";*/
             SqlCommand dbCommand = new SqlCommand(query, dbConnection);
