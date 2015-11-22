@@ -2,9 +2,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:inetConnectionString %>" SelectCommand="SELECT * FROM [projects]"></asp:SqlDataSource>
 <!DOCTYPE html>
-<div id="container">
     <div id="top">
-        <asp:Label ID="greeting" runat="server" Text="Welcome"></asp:Label>
+    </div>
+<div id="container">
+    
+    <div id="left">
     </div>
   
     <div id="right">
@@ -22,6 +24,8 @@
         </asp:GridView>
     </div>
 </div>
+        <div id="footer">
+    </div>
 </asp:Content>
 <asp:Content ID="Content2" runat="server" contentplaceholderid="head">
 </asp:Content>
