@@ -4,6 +4,9 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:DataList ID="DataList1" runat="server" DataKeyField="projectid" DataSourceID="SqlDataSource1">
     <ItemTemplate>
+        projectname:
+        <asp:Label ID="projectnameLabel" runat="server" Text='<%# Eval("projectname") %>' />
+        <br />
         projectid:
         <asp:Label ID="projectidLabel" runat="server" Text='<%# Eval("projectid") %>' />
         <br />
