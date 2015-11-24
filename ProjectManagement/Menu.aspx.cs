@@ -136,16 +136,16 @@ namespace ProjectManagement
             getProjectInfo.Parameters.AddWithValue("@selectedDate", selectedDate);
             getProjectInfo.Connection = userDb;
             SqlDataReader read = getProjectInfo.ExecuteReader();
-            read.Read();
-            if(read["description"] != DBNull.Value)
+            if(read.Read().Equals(DBNull.Value))
+            {
+                taskTxt.Text = "Nothing due on day selected";
+            }
+
+            else
             {
                 string projecttext = read.GetString(0);
 
                 taskTxt.Text = projecttext;
-            }
-            else
-            {
-                taskTxt.Text = "Nothing due on day selected";
             }
             
             userDb.Close();
