@@ -18,44 +18,44 @@ namespace ProjectManagement
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            // store connection string in userDb
-            SqlConnection userDb = new SqlConnection(SqlDataSource1.ConnectionString);
-            // open the connection
-            userDb.Open();
+                // store connection string in userDb
+                SqlConnection userDb = new SqlConnection(SqlDataSource1.ConnectionString);
+                // open the connection
+                userDb.Open();
 
-            string id = (string)Session["UserID"];
+                string id = (string)Session["UserID"];
 
-            SqlCommand getID = new SqlCommand();
-            getID.CommandText = "SELECT firstname FROM username WHERE userid = @id";
-            getID.Parameters.AddWithValue("@id", id);
-            getID.Connection = userDb;
-            SqlDataReader read = getID.ExecuteReader();
-            read.Read();
-            string firstname = read.GetString(0);
-            //Present greeting on login page
-            //greeting.Text = "Welcome back, " + firstname;
+                SqlCommand getID = new SqlCommand();
+                getID.CommandText = "SELECT firstname FROM username WHERE userid = @id";
+                getID.Parameters.AddWithValue("@id", id);
+                getID.Connection = userDb;
+                SqlDataReader read = getID.ExecuteReader();
+                read.Read();
+                string firstname = read.GetString(0);
+                //Present greeting on login page
+                //greeting.Text = "Welcome back, " + firstname;
 
-            //get days to populate on calendar. store in array
+                //get days to populate on calendar. store in array
 
 
 
-            //taskdays = new ArrayList();
-            //System.DateTime day;
-            ////query days
-            //SqlCommand getDays = new SqlCommand();
-            //getDays.CommandText = "SELECT duedate FROM milestone INNER JOIN task ON task.milestoneid = milestone.milestoneid";
-            //getDays.Connection = userDb;
-            ////taskdays.Add(day);
+                //taskdays = new ArrayList();
+                //System.DateTime day;
+                ////query days
+                //SqlCommand getDays = new SqlCommand();
+                //getDays.CommandText = "SELECT duedate FROM milestone INNER JOIN task ON task.milestoneid = milestone.milestoneid";
+                //getDays.Connection = userDb;
+                ////taskdays.Add(day);
 
-            if (!IsPostBack)
-            {
-                Calendar1.VisibleDate = DateTime.Today;
-                FillEvents();
-            }
+                if (!IsPostBack)
+                {
+                    Calendar1.VisibleDate = DateTime.Today;
+                    FillEvents();
+                }
 
-            //taskTxt.Text = dsmilestone.ToString();
+                //taskTxt.Text = dsmilestone.ToString();
 
-            userDb.Close();
+                userDb.Close();
         }
 
         protected void FillEvents()

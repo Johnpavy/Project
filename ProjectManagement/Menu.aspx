@@ -4,7 +4,6 @@
 <!DOCTYPE html>
     <div id="top">
     </div>
-    
     <div id="left">
     </div>
     <div id="right">
