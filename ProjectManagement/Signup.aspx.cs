@@ -22,6 +22,7 @@ namespace ProjectManagement
         {
             // Variable to store username and boolean to store whether or not user name exists
             string userName = NewEmailTxtBox.Text;
+            Session["user"] = userName;
             string password = NewPassTxtBox.Text;
             string confirmPW = ConfirmPassTxtBox.Text;
             bool ifUserNameExists;
@@ -83,7 +84,7 @@ namespace ProjectManagement
                     error1.Text = "User name is accepted!, Account created.";
                     error1.Visible = true;
 
-                    Response.Redirect("/menu.aspx");
+                    Response.Redirect("/Login.aspx");
                 }
                 catch
                 {
