@@ -21,6 +21,9 @@ namespace ProjectManagement
             string adminUser = AdminUserName.Text;
             string password = AdminPassword.Text;
 
+            // Store username in a session variable to track who is using the program
+            Session["user"] = adminUser;
+
             bool ifUserNameExists;
             // if password is correct this will be true (not setup yet)
             bool correctPassword;
@@ -50,11 +53,20 @@ namespace ProjectManagement
                 // if both match, on to page 1(or whatever we call it)
                 if (correctPassword)
                 {
-                    // I put admin login as a placeholder for now
 
-                    Response.Redirect("/AdminPage.aspx");
+                    SqlCommand getID = new SqlCommand();
+                    getID.CommandText = "select userid from username where email = @email";
+                    getID.Parameters.AddWithValue("@email", adminUser);
+                    getID.Connection = userDb;
+                    SqlDataReader rd = getID.ExecuteReader();
+                    rd.Read();
+                    //Int32 userIDprimitive;
+                    var userIDprimitive = rd.GetInt32(0);
+                    String userID = userIDprimitive.ToString();
+                    Session["UserID"] = userID;
+                    // menu redirection after login
+                    Response.Redirect("/adminPage.aspx");
                 }
-                // we already confirmed that a username exists at this point so now we know that the password doesn't match
                 else
                 {
                     loginLabel.ForeColor = System.Drawing.Color.Red;
