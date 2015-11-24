@@ -14,57 +14,50 @@
 	            background-size: 100% 100%;
 	    }
 
-        div#container
+        container
         {
+            overflow: auto;
             width: 1024px;
             height: 832px;
-            display: flex;
+            display:block;
+            content:"";
+            clear:both;
         }
 
-        div#top
+        #top
         {
-            height: 256px;
-            width: auto;
             text-align: right;
             margin-left: 800px;
-            font-size: 14px;
+            font-size: 16px;
 	        font-family: 'Helvetica Neue LT Pro';
 	        font-weight: bold;
+	        color: #7CF900;
         }
 
-        div#left
+        #left
         {
-            width: 256px;
-            height: 512px;
-            margin-top: 0px;
-            margin-right: 0px;
-            margin-left: 0px;
-            margin-bottom: 0px;
+            margin-top: 285px;
 	        font-size: 16px;
 	        font-family: 'Helvetica Neue LT Pro';
 	        font-weight: bold;
 	        text-align: left;
 	        text-shadow: none;
-            flex: 1;
+            float: left;
         }
 
-        div#right 
+        #right 
         {
-            width: 768px;
-            height: 512px;
-            margin-top: 0px;
-            margin-right: 0px;
-            margin-left: 300px;
-            margin-bottom: 0px;
+            margin-top: 265px;
+            margin-right: 512px;
             font-size: 16px;
             font-family: 'Helvetica Neue LT Pro';
             font-weight: bold;
             text-align: left;
             text-shadow: none;
-            flex: 2;
+            float: right;
         }
 
-        div#footer
+        #footer
         {
             height: 64px;
             width: auto;
@@ -85,7 +78,7 @@
 
         #left a:hover,#right a:hover
         {
-	        color: #7ba02e;
+	        color: #3f4f1c;
 	        border-radius: 10px;
         }
 
@@ -94,7 +87,7 @@
             color: #7CF900;
         }
 
-        #menu *,#signup *,#right *,#left *,#footer *
+        #menu *,#top *,#signup *,#right *,#left *,#footer *
         {
             text-decoration: none;
 	        font-size: 12px;
@@ -114,7 +107,6 @@
 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:inetConnectionString %>" SelectCommand="SELECT * FROM [projects]"></asp:SqlDataSource>
           <div id="top">
           </div>
-    <div id="container">
         <div id="left">
             <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Menu.aspx">DASHBOARD</asp:HyperLink>
 
@@ -127,13 +119,14 @@
             </p>
 
          </div>
+<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
 
         <div id="right">
         </div>
-  </div>
+
+
         <div id="footer">
         </div>
-<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
 </asp:ContentPlaceHolder>
 </form>
 </body>
