@@ -24,6 +24,7 @@ namespace ProjectManagement
             userDb.Open();
 
             string id = (string)Session["UserID"];
+
             SqlCommand getID = new SqlCommand();
             getID.CommandText = "SELECT firstname FROM username WHERE userid = @id";
             getID.Parameters.AddWithValue("@id", id);
@@ -83,6 +84,9 @@ namespace ProjectManagement
 
         protected DataSet GetCurrentMonthData(DateTime firstDate, DateTime lastDate)
         {
+            int intID;
+            string id = (string)Session["UserID"];
+            int.TryParse(id, out intID);
             DataSet dsMonth = new DataSet();
             SqlConnection userDb = new SqlConnection(SqlDataSource1.ConnectionString);
             String connString = userDb.ConnectionString;
@@ -90,13 +94,15 @@ namespace ProjectManagement
             String query;
 
             //query = "SELECT duedate FROM milestone INNER JOIN task ON task.milestoneid = milestone.milestoneid WHERE duedate >= @firstDate AND duedate < @lastDate";
-            query = "SELECT duedate FROM projects WHERE duedate >= @firstDate AND duedate < @lastDate";
+            //query = "SELECT duedate FROM projects WHERE duedate >= @firstDate AND duedate < @lastDate AND userid = @userid";
+            query = "SELECT duedate FROM projects WHERE userid = @userid";
 
             /* query = "SELECT HolidayDate FROM Holidays " + _
          " WHERE HolidayDate >= @firstDate AND HolidayDate < @lastDate";*/
             SqlCommand dbCommand = new SqlCommand(query, dbConnection);
             dbCommand.Parameters.Add(new SqlParameter("@firstDate", firstDate));
             dbCommand.Parameters.Add(new SqlParameter("@lastDate", lastDate));
+            dbCommand.Parameters.Add(new SqlParameter("@userid", intID));
 
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(dbCommand);
             try
