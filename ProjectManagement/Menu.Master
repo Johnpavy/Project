@@ -9,62 +9,62 @@
     <style>
         html
         { 
-			    background: url(images/main.png) center fixed;
-                background-repeat: no-repeat;
-	            background-size: 100% 100%;
+	        background: url(images/main.png) center fixed;
+            background-repeat: no-repeat;
+	        background-size: 100% 100%;
 	    }
 
-        div#container
+        container
         {
+            overflow: auto;
             width: 1024px;
             height: 832px;
-            display: flex;
+            display:block;
+            content:"";
+            clear:both;
         }
 
-        div#top
+        #taskTxt,#Calendar1
         {
-            height: 256px;
-            width: auto;
+            background-color: #E8DD92;
+            color: #334018;
+            text-decoration: none;
+        }
+
+        #top
+        {
             text-align: right;
             margin-left: 800px;
-            font-size: 14px;
+            font-size: 16px;
 	        font-family: 'Helvetica Neue LT Pro';
 	        font-weight: bold;
+	        color: #334018;
         }
 
-        div#left
+        #left
         {
-            width: 256px;
-            height: 512px;
-            margin-top: 0px;
-            margin-right: 0px;
-            margin-left: 0px;
-            margin-bottom: 0px;
+            margin-top: 285px;
 	        font-size: 16px;
 	        font-family: 'Helvetica Neue LT Pro';
 	        font-weight: bold;
 	        text-align: left;
 	        text-shadow: none;
-            flex: 1;
+            float: left;
         }
 
-        div#right 
+        #right 
         {
-            width: 768px;
-            height: 512px;
-            margin-top: 0px;
-            margin-right: 0px;
-            margin-left: 300px;
-            margin-bottom: 0px;
+            margin-top: 285px;
+            margin-left: 100px;
             font-size: 16px;
             font-family: 'Helvetica Neue LT Pro';
             font-weight: bold;
             text-align: left;
             text-shadow: none;
-            flex: 2;
+            float: left;
         }
 
-        div#footer
+        #footer
         {
             height: 64px;
             width: auto;
@@ -85,7 +85,7 @@
 
         #left a:hover,#right a:hover
         {
-	        color: #7ba02e;
+	        color: #3f4f1c;
 	        border-radius: 10px;
         }
 
@@ -94,10 +94,10 @@
             color: #334018;
         }
 
-        #menu *,#signup *,#right *,#left *,#footer *
+        #menu *,#top *,#signup *,#right *,#left *,#footer *
         {
             text-decoration: none;
-	        font-size: 12px;
+	        font-size: 16px;
 	        padding: 2px 2px 2px 2px;
 	        font-family: 'Helvetica Neue LT Pro';
             font-weight: bold;
@@ -113,9 +113,8 @@
 <form id="form1" runat="server">
 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:inetConnectionString %>" SelectCommand="SELECT * FROM [projects]"></asp:SqlDataSource>
           <div id="top">
-            <asp:Label ID="greeting" runat="server" Text="Welcome"></asp:Label>
-        </div>
-    <div id="container">
+                          <asp:Label ID="greeting" runat="server" Text="Welcome"></asp:Label>
+          </div>
         <div id="left">
             <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Menu.aspx">DASHBOARD</asp:HyperLink>
 
@@ -126,18 +125,20 @@
             <p>
                 <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/tasks.aspx">TASKS</asp:HyperLink>
             </p>
-                <p>
+                            <p>
             <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/AdminLogin.aspx">ADMIN</asp:HyperLink>
    
             </p>
+
          </div>
+<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
 
         <div id="right">
         </div>
-  </div>
+
+
         <div id="footer">
         </div>
-<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
 </asp:ContentPlaceHolder>
 </form>
 </body>

@@ -4,34 +4,26 @@
 <!DOCTYPE html>
     <div id="top">
     </div>
-<div id="container">
     
     <div id="left">
     </div>
     <div id="right">
-        <asp:Calendar ID="Calendar1" runat="server" BackColor="#FFFFCC" BorderColor="#FFCC66" BorderWidth="1px" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="#663399" Height="200px" OnDayRender="Calendar1_DayRender" OnSelectionChanged="Calendar1_SelectionChanged" OnVisibleMonthChanged="Calendar1_VisibleMonthChanged" ShowGridLines="True" Width="406px">
-            <DayHeaderStyle BackColor="#FFCC66" Font-Bold="True" Height="1px" />
-            <NextPrevStyle Font-Size="9pt" ForeColor="#FFFFCC" />
-            <OtherMonthDayStyle ForeColor="#CC9966" />
-            <SelectedDayStyle BackColor="#CCCCFF" Font-Bold="True" />
-            <SelectorStyle BackColor="#FFCC66" />
-            <TitleStyle BackColor="#990000" Font-Bold="True" Font-Size="9pt" ForeColor="#FFFFCC" />
-            <TodayDayStyle BackColor="#FFCC66" ForeColor="White" />
+        <asp:Calendar ID="Calendar1" runat="server" BackColor="#E8DD92" DayNameFormat="Shortest" Font-Names="Times New Roman" Font-Size="20pt" ForeColor="#334018" Width="700px" Height="500px" OnDayRender="Calendar1_DayRender" OnSelectionChanged="Calendar1_SelectionChanged" OnVisibleMonthChanged="Calendar1_VisibleMonthChanged" NextPrevFormat="FullMonth" TitleFormat="Month" BorderStyle="Solid" BorderWidth="3" BorderColor="#334018">
+            <DayHeaderStyle BackColor="#334018" Font-Bold="True" Font-Size="12pt" ForeColor="White" Height="14pt"/>
+            <DayStyle Width="14%" />
+            <NextPrevStyle Font-Size="10pt" ForeColor="White" />
+            <OtherMonthDayStyle ForeColor="#334018" />
+            <SelectedDayStyle BackColor="#334018" ForeColor="White" />
+            <SelectorStyle BackColor="#334018" Font-Bold="True" Font-Names="Verdana" Font-Size="10pt" ForeColor="#333333" Width="1%" />
+            <TitleStyle BackColor="#334018" Font-Bold="True" Font-Size="16pt" ForeColor="White" Height="14pt" />
+            <TodayDayStyle BackColor="#334018" ForeColor="White"/>
         </asp:Calendar>
-        <br />
-        <asp:TextBox ID="taskTxt" runat="server" Height="108px" ReadOnly="True" TextMode="MultiLine" Width="400px"></asp:TextBox>
-        <br />
+        <asp:TextBox ID="taskTxt" runat="server" ReadOnly="True" TextMode="MultiLine" Width="690px" Height="100px" BackColor="#E8DD92" BorderColor="#334018" BorderStyle="Solid" BorderWidth="3"></asp:TextBox>
         <br />
         <br />
-        <asp:GridView ID="GridView1" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="projectid" DataSourceID="SqlDataSource1">
-            <Columns>
-                <asp:BoundField DataField="description" HeaderText="description" SortExpression="description" />
-                <asp:BoundField DataField="startdate" HeaderText="startdate" SortExpression="startdate" />
-                <asp:BoundField DataField="duedate" HeaderText="duedate" SortExpression="duedate" />
-            </Columns>
-        </asp:GridView>
+        <br />
+
     </div>
-</div>
         <div id="footer">
     </div>
 </asp:Content>
