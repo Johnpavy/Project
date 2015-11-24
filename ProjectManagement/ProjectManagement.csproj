@@ -71,6 +71,8 @@
     <Content Include="CSS\StyleSheet1.css" />
     <Content Include="Images\abg4.jpg" />
     <Content Include="Images\admin.png" />
+    <Content Include="Images\adminbanner.png" />
+    <Content Include="Images\banner.png" />
     <Content Include="Images\bg.jpg" />
     <Content Include="Images\bg5.jpg" />
     <Content Include="Images\bg6.jpg" />

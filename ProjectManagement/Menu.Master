@@ -9,9 +9,11 @@
     <style>
         html
         { 
-	        background: url(images/main.png) center fixed;
+	        background-color: #E8DD92;
+            background-image: url(images/banner.png);
+            background-position: center top;
             background-repeat: no-repeat;
-	        background-size: 100% 100%;
+            background-size: 75%;
 	    }
 
         container
@@ -55,7 +57,7 @@
         #right 
         {
             margin-top: 285px;
-            margin-left: 50px;
+            margin-left: 256px;
             font-size: 16px;
             font-family: 'Helvetica Neue LT Pro';
             font-weight: bold;
