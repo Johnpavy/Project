@@ -70,6 +70,7 @@
     <Content Include="calendar.aspx" />
     <Content Include="CSS\StyleSheet1.css" />
     <Content Include="Images\abg4.jpg" />
+    <Content Include="Images\admin.png" />
     <Content Include="Images\bg.jpg" />
     <Content Include="Images\bg5.jpg" />
     <Content Include="Images\bg6.jpg" />
