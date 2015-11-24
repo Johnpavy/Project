@@ -48,7 +48,6 @@
         #right 
         {
             margin-top: 265px;
-            margin-right: 512px;
             font-size: 16px;
             font-family: 'Helvetica Neue LT Pro';
             font-weight: bold;
