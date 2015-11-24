@@ -1,112 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AdminPage.aspx.cs" Inherits="ProjectManagement.AdminPage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/AdminLanding.Master" CodeBehind="AdminPage.aspx.cs" Inherits="ProjectManagement.AdminPage" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-     <style>
-        html
-        { 
-			    background: url(images/main.png) center fixed;
-                background-repeat: no-repeat;
-	            background-size: 100% 100%;
-	    }
-
-        container
-        {
-            width: 1024px;
-            height: 832px;
-        }
-
-        #top
-        {
-            height: 256px;
-            text-align: right;
-        }
-
-        #left
-        {
-            width: 256px;
-            height: 512px;
-            margin-top: 0px;
-            margin-right: 0px;
-            margin-left: 0px;
-            margin-bottom: 0px;
-	        font-size: 16px;
-	        font-family: 'Helvetica Neue LT Pro';
-	        font-weight: bold;
-	        text-align: left;
-	        text-shadow: none;
-            float: left;
-        }
-
-        #right {
-            width: 768px;
-            height: 512px;
-            margin-top: 0px;
-            margin-right: 0px;
-            margin-left: 300px;
-            margin-bottom: 0px;
-            font-size: 16px;
-            font-family: 'Helvetica Neue LT Pro';
-            font-weight: bold;
-            text-align: left;
-            text-shadow: none;
-        }
-
-        #footer
-        {
-            height: 64px;
-            text-align: center;
-        }
-        
-        #calendar
-        {
-            float: right;
-
-        }
-        #left a, #right a
-        {
-            text-decoration: none;
-	        font-size: 16px;
-	        color: #334018;
-	        padding: 8px 8px 8px 8px;
-	        font-family: 'Helvetica Neue LT Pro';
-            font-weight: bold;
-	        text-align: center;
-	        text-shadow: none;
-        }
-
-        #left a:hover,#right a:hover
-        {
-	        color: #7ba02e;
-	        border-radius: 10px;
-        }
-
-        p
-        {
-            color: #ffffff;
-        }
-
-        #menu *,#signup *
-        {
-            text-decoration: none;
-	        font-size: 12px;
-	        padding: 2px 2px 2px 2px;
-	        font-family: 'Helvetica Neue LT Pro';
-            font-weight: bold;
-	        text-align: left;
-            color: #000;
-	        text-shadow: none;
-        }
-
-    </style>
-<body>
-    <form id="form1" runat="server">
     <div style="margin-left: 117px">
-    
+              <div id="top">
+            <asp:Label ID="greeting" runat="server" Text="Welcome"></asp:Label>
+          </div>
         <br />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ADMIN PAGE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <br />
@@ -238,6 +136,8 @@
         <br />
     
     </div>
-    </form>
-</body>
-</html>
+
+
+</asp:Content>
+<asp:Content ID="Content2" runat="server" contentplaceholderid="head">
+</asp:Content>

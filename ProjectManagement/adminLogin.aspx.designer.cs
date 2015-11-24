@@ -10,7 +10,7 @@
 namespace ProjectManagement {
     
     
-    public partial class WebForm2 {
+    public partial class AdminLogin {
         
         /// <summary>
         /// SqlDataSource1 control.

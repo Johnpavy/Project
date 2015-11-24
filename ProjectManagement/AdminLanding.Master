@@ -1,0 +1,140 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminLanding.Master.cs" Inherits="ProjectManagement.AdminLanding" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+        html
+        { 
+			    background: url(images/admin.png) center fixed;
+                background-repeat: no-repeat;
+	            background-size: 100% 100%;
+	    }
+
+        div#container
+        {
+            width: 1024px;
+            height: 832px;
+            display: flex;
+        }
+
+        div#top
+        {
+            height: 256px;
+            width: auto;
+            text-align: right;
+            margin-left: 800px;
+            font-size: 14px;
+	        font-family: 'Helvetica Neue LT Pro';
+	        font-weight: bold;
+        }
+
+        div#left
+        {
+            width: 256px;
+            height: 512px;
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-left: 0px;
+            margin-bottom: 0px;
+	        font-size: 16px;
+	        font-family: 'Helvetica Neue LT Pro';
+	        font-weight: bold;
+	        text-align: left;
+	        text-shadow: none;
+            flex: 1;
+        }
+
+        div#right 
+        {
+            width: 768px;
+            height: 512px;
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-left: 300px;
+            margin-bottom: 0px;
+            font-size: 16px;
+            font-family: 'Helvetica Neue LT Pro';
+            font-weight: bold;
+            text-align: left;
+            text-shadow: none;
+            flex: 2;
+        }
+
+        div#footer
+        {
+            height: 64px;
+            width: auto;
+            text-align: center;
+        }
+        
+        #left a, #right a
+        {
+            text-decoration: none;
+	        font-size: 16px;
+	        color: #7CF900;
+	        padding: 8px 8px 8px 8px;
+	        font-family: 'Helvetica Neue LT Pro';
+            font-weight: bold;
+	        text-align: center;
+	        text-shadow: none;
+        }
+
+        #left a:hover,#right a:hover
+        {
+	        color: #7ba02e;
+	        border-radius: 10px;
+        }
+
+        p
+        {
+            color: #7CF900;
+        }
+
+        #menu *,#signup *,#right *,#left *,#footer *
+        {
+            text-decoration: none;
+	        font-size: 12px;
+	        padding: 2px 2px 2px 2px;
+	        font-family: 'Helvetica Neue LT Pro';
+            font-weight: bold;
+	        text-align: left;
+            color: #7CF900;
+	        text-shadow: none;
+        }
+
+    </style>
+</head>
+<body>
+
+<form id="form1" runat="server">
+<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:inetConnectionString %>" SelectCommand="SELECT * FROM [projects]"></asp:SqlDataSource>
+          <div id="top">
+          </div>
+    <div id="container">
+        <div id="left">
+            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Menu.aspx">DASHBOARD</asp:HyperLink>
+
+            <p>
+                <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/projects.aspx">PROJECTS</asp:HyperLink>
+            </p>
+            <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/milestones.aspx">MILESTONES</asp:HyperLink>
+            <p>
+                <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/tasks.aspx">TASKS</asp:HyperLink>
+            </p>
+
+         </div>
+
+        <div id="right">
+        </div>
+  </div>
+        <div id="footer">
+        </div>
+<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+</asp:ContentPlaceHolder>
+</form>
+</body>
+</html>

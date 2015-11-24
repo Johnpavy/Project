@@ -9,7 +9,7 @@ using System.Data.SqlClient;
 
 namespace ProjectManagement
 {
-    public partial class WebForm2 : System.Web.UI.Page
+    public partial class AdminLogin : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
