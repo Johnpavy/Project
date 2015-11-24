@@ -92,13 +92,15 @@ namespace ProjectManagement
             String connString = userDb.ConnectionString;
             SqlConnection dbConnection = new SqlConnection(connString);
             String query;
-
+            // I dont think we will need the next two lines at all but I wanted to save them until i knew for sure - john
             //query = "SELECT duedate FROM milestone INNER JOIN task ON task.milestoneid = milestone.milestoneid WHERE duedate >= @firstDate AND duedate < @lastDate";
             //query = "SELECT duedate FROM projects WHERE duedate >= @firstDate AND duedate < @lastDate AND userid = @userid";
-            query = "SELECT duedate FROM projects WHERE userid = @userid";
 
-            /* query = "SELECT HolidayDate FROM Holidays " + _
-         " WHERE HolidayDate >= @firstDate AND HolidayDate < @lastDate";*/
+            // this query works and pulls up all of the user's project deadlines but not the milestones. 
+            query = "SELECT duedate FROM projects WHERE userid = @userid";
+            // this commented out code below is trying to get the milestone due dates
+            //query = "SELECT duedate FROM milestone INNER JOIN projects WHERE milestone.projectid = project.projectid";
+
             SqlCommand dbCommand = new SqlCommand(query, dbConnection);
             dbCommand.Parameters.Add(new SqlParameter("@firstDate", firstDate));
             dbCommand.Parameters.Add(new SqlParameter("@lastDate", lastDate));
@@ -118,8 +120,35 @@ namespace ProjectManagement
             FillEvents();
             taskTxt.Text = ""; //clear task textbox
                                //if day is a task day, pull its data
+                               // store connection string in userDb
+            int intID;
+            
+            DateTime selectedDate = Calendar1.SelectedDate;
+            SqlConnection userDb = new SqlConnection(SqlDataSource1.ConnectionString);
+            // open the connection
+            userDb.Open();
 
-          
+            string id = (string)Session["UserID"];
+            int.TryParse(id, out intID);
+            SqlCommand getProjectInfo = new SqlCommand();
+            getProjectInfo.CommandText = "SELECT description FROM projects WHERE userid = @id AND duedate = @selectedDate";
+            getProjectInfo.Parameters.AddWithValue("@id", id);
+            getProjectInfo.Parameters.AddWithValue("@selectedDate", selectedDate);
+            getProjectInfo.Connection = userDb;
+            SqlDataReader read = getProjectInfo.ExecuteReader();
+            read.Read();
+            if(read["description"] != DBNull.Value)
+            {
+                string projecttext = read.GetString(0);
+
+                taskTxt.Text = projecttext;
+            }
+            else
+            {
+                taskTxt.Text = "Nothing due on day selected";
+            }
+            
+            userDb.Close();
         }
 
         //should be called when the calendar is created, dates should be rendered
