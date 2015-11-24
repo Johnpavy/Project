@@ -90,6 +90,7 @@
     <Content Include="Menu.aspx" />
     <Content Include="milestones.aspx" />
     <Content Include="AdminLanding.Master" />
+    <Content Include="AdminProjects.aspx" />
     <None Include="Properties\PublishProfiles\Team1Project.pubxml" />
     <Content Include="Menu.Master" />
     <None Include="Web.Debug.config">
@@ -203,6 +204,13 @@
     </Compile>
     <Compile Include="milestones.aspx.designer.cs">
       <DependentUpon>milestones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminProjects.aspx.cs">
+      <DependentUpon>AdminProjects.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminProjects.aspx.designer.cs">
+      <DependentUpon>AdminProjects.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
