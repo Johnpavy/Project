@@ -36,6 +36,12 @@
 	        color: #7CF900;
         }
 
+        #top a
+        {
+            text-decoration: underline;
+        }
+
+
         #left
         {
             margin-top: 285px;
@@ -108,17 +114,16 @@
 <form id="form1" runat="server">
 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:inetConnectionString %>" SelectCommand="SELECT * FROM [projects]"></asp:SqlDataSource>
           <div id="top">
+                     <asp:Label ID="greeting" runat="server" Text="Welcome"></asp:Label>
+                    <br /><a href="Login.aspx"><asp:Label ID="Label1" runat="server" Text="Logout"></asp:Label></a>
           </div>
         <div id="left">
             <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Menu.aspx">DASHBOARD</asp:HyperLink>
 
             <p>
-                <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/projects.aspx">PROJECTS</asp:HyperLink>
+            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/adminprojects.aspx">MANAGE PROJECTS</asp:HyperLink>
             </p>
-            <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/milestones.aspx">MILESTONES</asp:HyperLink>
-            <p>
-                <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/tasks.aspx">TASKS</asp:HyperLink>
-            </p>
+            <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/adminpage.aspx">MANAGE USERS</asp:HyperLink>
 
          </div>
 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
