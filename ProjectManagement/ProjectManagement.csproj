@@ -67,7 +67,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AdminPage.aspx" />
-    <Content Include="calendar.aspx" />
     <Content Include="CSS\StyleSheet1.css" />
     <Content Include="Images\abg4.jpg" />
     <Content Include="Images\admin.png" />
@@ -125,13 +124,6 @@
     </Compile>
     <Compile Include="AdminPage.aspx.designer.cs">
       <DependentUpon>AdminPage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="calendar.aspx.cs">
-      <DependentUpon>calendar.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="calendar.aspx.designer.cs">
-      <DependentUpon>calendar.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
