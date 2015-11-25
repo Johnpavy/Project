@@ -11,9 +11,7 @@ namespace ProjectManagement
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string userID = (string)Session["UserID"];
-            Label1.Text = userID;
-            
+
         }
     }
 }
