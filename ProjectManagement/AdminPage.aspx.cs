@@ -16,5 +16,24 @@ namespace ProjectManagement
 
         }
 
+        protected void FormView1_PageIndexChanging(object sender, FormViewPageEventArgs e)
+        {
+
+        }
+
+        protected void FormView1_ItemInserted(object sender, FormViewInsertedEventArgs e)
+        {
+            GridView1.DataBind();
+        }
+
+        protected void FormView1_ItemDeleted(object sender, FormViewDeletedEventArgs e)
+        {
+            GridView1.DataBind();
+        }
+
+        protected void FormView1_ItemUpdated(object sender, FormViewUpdatedEventArgs e)
+        {
+            GridView1.DataBind();
+        }
     }
 }
