@@ -82,10 +82,11 @@ namespace ProjectManagement
             //query = "SELECT duedate FROM projects WHERE duedate >= @firstDate AND duedate < @lastDate AND userid = @userid";
 
             // this query works and pulls up all of the user's project deadlines but not the milestones. 
-            query = "SELECT duedate FROM projects WHERE userid = @userid";
+            //query = "SELECT duedate FROM projects WHERE userid = @userid";
             // this commented out code below is trying to get the milestone due dates
-            //query = "SELECT duedate FROM milestone INNER JOIN projects WHERE milestone.projectid = projects.projectid and userid = @userid";
-
+            // the query below works to get the due dates for milestones
+            //query = "SELECT milestone.duedate FROM milestone INNER JOIN projects ON milestone.projectid = projects.projectid";
+            query = "SELECT milestone.duedate FROM milestone INNER JOIN projects ON milestone.projectid = projects.projectid WHERE userid = @userid UNION SELECT duedate FROM projects WHERE userid = @userid";
             SqlCommand dbCommand = new SqlCommand(query, dbConnection);
             dbCommand.Parameters.Add(new SqlParameter("@firstDate", firstDate));
             dbCommand.Parameters.Add(new SqlParameter("@lastDate", lastDate));
@@ -102,6 +103,7 @@ namespace ProjectManagement
 
         protected void Calendar1_SelectionChanged(object sender, EventArgs e)
         {
+
             FillEvents();
             taskTxt.Text = ""; //clear task textbox
                                //if day is a task day, pull its data
@@ -116,7 +118,8 @@ namespace ProjectManagement
             string id = (string)Session["UserID"];
             int.TryParse(id, out intID);
             SqlCommand getProjectInfo = new SqlCommand();
-            getProjectInfo.CommandText = "SELECT description FROM projects WHERE userid = @id AND duedate = @selectedDate";
+            //getProjectInfo.CommandText = "SELECT milestone.description FROM milestone INNER JOIN projects ON milestone.projectid = projects.projectid WHERE userid = @id AND milestone.duedate = @selectedDate"; 
+            getProjectInfo.CommandText = "SELECT description FROM projects WHERE userid = @id AND duedate = @selectedDate UNION SELECT milestone.description FROM milestone INNER JOIN projects ON milestone.projectid = projects.projectid WHERE userid = @id AND milestone.duedate = @selectedDate";
             getProjectInfo.Parameters.AddWithValue("@id", id);
             getProjectInfo.Parameters.AddWithValue("@selectedDate", selectedDate);
             getProjectInfo.Connection = userDb;
@@ -124,9 +127,13 @@ namespace ProjectManagement
             // if anything is read from database, put the text in the textbox
             if(read.Read())
             {
-                string projecttext = read.GetString(0);
+                while(read.Read())
+                {
+                    string projecttext = read.GetString(0);
 
-                taskTxt.Text = projecttext;
+                    taskTxt.Text += projecttext;
+                }
+
             }
             else
             {
@@ -154,12 +161,6 @@ namespace ProjectManagement
                 }
             }
 
-            //if the date is in the arraylist of task days
-            //if (taskdays.Contains(e.Day.Date))
-            //{
-            //    //set color
-            //    //e.Cell.BackColor = System.Drawing.Color.Aquamarine;
-            //}
         }
 
         protected void Calendar1_VisibleMonthChanged(object sender, MonthChangedEventArgs e)
