@@ -133,18 +133,24 @@
                           <br /><a href="Login.aspx"><asp:Label ID="Label1" runat="server" Text="Logout"></asp:Label></a>
           </div>
         <div id="left">
+            <p>
             <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Menu.aspx">DASHBOARD</asp:HyperLink>
-
+            </p>
+            
             <p>
                 <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/projects.aspx">PROJECTS</asp:HyperLink>
             </p>
-            <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/milestones.aspx">MILESTONES</asp:HyperLink>
+            
             <p>
-                <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/tasks.aspx">TASKS</asp:HyperLink>
+            <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/milestones.aspx">MILESTONES</asp:HyperLink>
             </p>
-                            <p>
+
+            <p>
+            <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/tasks.aspx">TASKS</asp:HyperLink>
+            </p>
+            
+            <p>
             <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/AdminLogin.aspx">ADMIN</asp:HyperLink>
-   
             </p>
 
          </div>

@@ -78,13 +78,13 @@
     <Content Include="Images\hero.jpg" />
     <Content Include="Images\heroimage.jpg" />
     <Content Include="Images\main.png" />
+    <Content Include="Images\website.png" />
     <Content Include="Login.aspx" />
     <Content Include="packages.config" />
     <Content Include="Login.Master" />
     <Content Include="AdminLogin.aspx" />
     <Content Include="projects.aspx" />
     <Content Include="dashboard.aspx" />
-    <Content Include="tasks.aspx" />
     <Content Include="Admin.master" />
     <Content Include="Menu.aspx" />
     <Content Include="milestones.aspx" />
@@ -102,6 +102,7 @@
   <ItemGroup>
     <Content Include="Signup.aspx" />
     <Content Include="CSS\StyleSheet2.css" />
+    <Content Include="Tasks.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -176,13 +177,6 @@
     <Compile Include="Menu.Master.designer.cs">
       <DependentUpon>Menu.Master</DependentUpon>
     </Compile>
-    <Compile Include="tasks.aspx.cs">
-      <DependentUpon>tasks.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="tasks.aspx.designer.cs">
-      <DependentUpon>tasks.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Menu.aspx.cs">
       <DependentUpon>Menu.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -203,6 +197,13 @@
     </Compile>
     <Compile Include="AdminProjects.aspx.designer.cs">
       <DependentUpon>AdminProjects.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks.aspx.cs">
+      <DependentUpon>Tasks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tasks.aspx.designer.cs">
+      <DependentUpon>Tasks.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

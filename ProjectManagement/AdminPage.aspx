@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/AdminLanding.Master" CodeBehind="AdminPage.aspx.cs" Inherits="ProjectManagement.AdminPage" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <div id="top">
+<div id="top">
 </div>
 
     
@@ -9,10 +9,6 @@
 </div>
 
 <div id="right">
-
-        
-
-
     o<asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="userid" DataSourceID="SqlDataSource2" Height="320px" ShowFooter="True" Width="781px">
         <Columns>
             <asp:CommandField ShowEditButton="True" ShowSelectButton="True" />
@@ -145,10 +141,6 @@
     </asp:SqlDataSource>
     <br />
     <br />
-
-        
-
-
 </div>
 
 <div id="footer">

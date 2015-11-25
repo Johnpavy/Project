@@ -12,12 +12,12 @@
             <DayStyle Width="14%" />
             <NextPrevStyle Font-Size="10pt" ForeColor="White" />
             <OtherMonthDayStyle ForeColor="#334018" />
-            <SelectedDayStyle BackColor="#334018" ForeColor="White" />
+            <SelectedDayStyle BackColor="#5f782d" ForeColor="White" />
             <SelectorStyle BackColor="#334018" Font-Bold="True" Font-Names="Verdana" Font-Size="10pt" ForeColor="#333333" Width="1%" />
             <TitleStyle BackColor="#334018" Font-Bold="True" Font-Size="16pt" ForeColor="White" Height="14pt" />
             <TodayDayStyle BackColor="#334018" ForeColor="White"/>
         </asp:Calendar>
-        <asp:TextBox ID="taskTxt" runat="server" ReadOnly="True" TextMode="MultiLine" Width="690px" Height="100px" BackColor="#E8DD92" BorderColor="#334018" BorderStyle="Solid" BorderWidth="3"></asp:TextBox>
+        <asp:TextBox ID="taskTxt" runat="server" ReadOnly="True" TextMode="MultiLine" Width="692px" Height="100px" BackColor="#E8DD92" BorderColor="#334018" BorderStyle="Solid" BorderWidth="3"></asp:TextBox>
         <br />
         <br />
         <br />

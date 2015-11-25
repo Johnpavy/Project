@@ -118,13 +118,17 @@
                     <br /><a href="Login.aspx"><asp:Label ID="Label1" runat="server" Text="Logout"></asp:Label></a>
           </div>
         <div id="left">
+            <p>
             <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Menu.aspx">DASHBOARD</asp:HyperLink>
+            </p>
 
             <p>
             <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/adminprojects.aspx">MANAGE PROJECTS</asp:HyperLink>
             </p>
+            
+            <p>    
             <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/adminpage.aspx">MANAGE USERS</asp:HyperLink>
-
+            </p>
          </div>
 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
 
