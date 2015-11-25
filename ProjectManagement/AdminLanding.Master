@@ -36,6 +36,12 @@
 	        color: #7CF900;
         }
 
+        #top a
+        {
+            text-decoration: underline;
+        }
+
+
         #left
         {
             margin-top: 285px;
@@ -109,6 +115,7 @@
 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:inetConnectionString %>" SelectCommand="SELECT * FROM [projects]"></asp:SqlDataSource>
           <div id="top">
                      <asp:Label ID="greeting" runat="server" Text="Welcome"></asp:Label>
+                    <br /><a href="Login.aspx"><asp:Label ID="Label1" runat="server" Text="Logout"></asp:Label></a>
           </div>
         <div id="left">
             <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Menu.aspx">DASHBOARD</asp:HyperLink>
