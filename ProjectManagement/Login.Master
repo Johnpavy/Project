@@ -18,10 +18,7 @@
 
         #menu
         {
-            margin-top: 250px;
-            margin-right: 0px;
-            margin-left: 0px;
-            margin-bottom: 0px;
+            margin-top: 15%;
 	        font-size: 12px;
 	        font-family: 'Helvetica Neue LT Pro';
 	        font-weight: bold;
@@ -31,10 +28,7 @@
 
         #signup
         {
-            margin-top: 165px;
-            margin-right: 0px;
-            margin-left: 0px;
-            margin-bottom: 0px;
+            margin-top: 15%;
 	        font-size: 12px;
 	        font-family: 'Helvetica Neue LT Pro';
 	        font-weight: bold;
