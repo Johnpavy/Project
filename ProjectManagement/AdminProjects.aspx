@@ -22,27 +22,27 @@
                 <asp:BoundField DataField="userid" HeaderText="userid" SortExpression="userid" />
             </Columns>
         </asp:GridView>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:inetConnectionString3 %>" SelectCommand="SELECT [description], [startdate], [duedate], [userid], [projectname], [projectid] FROM [projects]" OldValuesParameterFormatString="original_{0}" DeleteCommand="DELETE FROM [projects] WHERE [projectid] = @original_projectid" InsertCommand="INSERT INTO [projects] ([description], [startdate], [duedate], [userid], [projectname]) VALUES (@description, @startdate, @duedate, @userid, @projectname)" UpdateCommand="UPDATE [projects] SET [description] = @description, [startdate] = @startdate, [duedate] = @duedate, [userid] = @userid, [projectname] = @projectname WHERE [projectid] = @original_projectid">
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:inetConnectionString3 %>" SelectCommand="SELECT * FROM [projects]" OldValuesParameterFormatString="original_{0}" DeleteCommand="DELETE FROM [projects] WHERE [projectid] = @original_projectid" InsertCommand="INSERT INTO [projects] ([projectname], [description], [startdate], [duedate], [userid]) VALUES (@projectname, @description, @startdate, @duedate, @userid)" UpdateCommand="UPDATE [projects] SET [projectname] = @projectname, [description] = @description, [startdate] = @startdate, [duedate] = @duedate, [userid] = @userid WHERE [projectid] = @original_projectid">
             <DeleteParameters>
                 <asp:Parameter Name="original_projectid" Type="Int32" />
             </DeleteParameters>
             <InsertParameters>
-                <asp:Parameter Name="description" Type="String" />
-                <asp:Parameter Name="startdate" Type="String" />
-                <asp:Parameter DbType="Date" Name="duedate" />
-                <asp:Parameter Name="userid" Type="Int32" />
                 <asp:Parameter Name="projectname" Type="String" />
+                <asp:Parameter Name="description" Type="String" />
+                <asp:Parameter DbType="Date" Name="startdate" />
+                <asp:Parameter Name="duedate" DbType="Date" />
+                <asp:Parameter Name="userid" Type="Int32" />
             </InsertParameters>
             <UpdateParameters>
-                <asp:Parameter Name="description" Type="String" />
-                <asp:Parameter Name="startdate" Type="String" />
-                <asp:Parameter DbType="Date" Name="duedate" />
-                <asp:Parameter Name="userid" Type="Int32" />
                 <asp:Parameter Name="projectname" Type="String" />
+                <asp:Parameter Name="description" Type="String" />
+                <asp:Parameter DbType="Date" Name="startdate" />
+                <asp:Parameter Name="duedate" DbType="Date" />
+                <asp:Parameter Name="userid" Type="Int32" />
                 <asp:Parameter Name="original_projectid" Type="Int32" />
             </UpdateParameters>
         </asp:SqlDataSource>
-        <asp:FormView ID="FormView1" runat="server" DataKeyNames="projectid" DataSourceID="SqlDataSource2" Width="325px" OnItemDeleted="FormView1_ItemDeleted" OnItemInserted="FormView1_ItemInserted" OnItemUpdated="FormView1_ItemUpdated" OnPageIndexChanging="FormView1_PageIndexChanging">
+        <asp:FormView ID="FormView1" runat="server" DataKeyNames="projectid" DataSourceID="SqlDataSource2" Width="325px" OnItemDeleted="FormView1_ItemDeleted" OnItemInserted="FormView1_ItemInserted" OnItemUpdated="FormView1_ItemUpdated" OnPageIndexChanging="FormView1_PageIndexChanging" CssClass="auto-style1">
             <EditItemTemplate>
                 projectname:
                 <asp:TextBox ID="projectnameTextBox" runat="server" Text='<%# Bind("projectname") %>' />
@@ -88,9 +88,6 @@
                 projectname:
                 <asp:Label ID="projectnameLabel" runat="server" Text='<%# Bind("projectname") %>' />
                 <br />
-                projectid:
-                <asp:Label ID="projectidLabel" runat="server" Text='<%# Eval("projectid") %>' />
-                <br />
                 description:
                 <asp:Label ID="descriptionLabel" runat="server" Text='<%# Bind("description") %>' />
                 <br />
@@ -103,9 +100,30 @@
                 userid:
                 <asp:Label ID="useridLabel" runat="server" Text='<%# Bind("userid") %>' />
                 <br />
+                <asp:LinkButton ID="EditButton" runat="server" CausesValidation="False" CommandName="Edit" Text="Edit" />
+&nbsp;<asp:LinkButton ID="DeleteButton" runat="server" CausesValidation="False" CommandName="Delete" Text="Delete" />
+                &nbsp;<asp:LinkButton ID="NewButton" runat="server" CausesValidation="False" CommandName="New" Text="New" />
             </ItemTemplate>
         </asp:FormView>
-        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:inetConnectionString4 %>" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [projects]">
+        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:inetConnectionString4 %>" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [projects]" DeleteCommand="DELETE FROM [projects] WHERE [projectid] = @original_projectid" InsertCommand="INSERT INTO [projects] ([projectname], [description], [startdate], [duedate], [userid]) VALUES (@projectname, @description, @startdate, @duedate, @userid)" UpdateCommand="UPDATE [projects] SET [projectname] = @projectname, [description] = @description, [startdate] = @startdate, [duedate] = @duedate, [userid] = @userid WHERE [projectid] = @original_projectid">
+            <DeleteParameters>
+                <asp:Parameter Name="original_projectid" Type="Int32" />
+            </DeleteParameters>
+            <InsertParameters>
+                <asp:Parameter Name="projectname" Type="String" />
+                <asp:Parameter Name="description" Type="String" />
+                <asp:Parameter DbType="Date" Name="startdate" />
+                <asp:Parameter DbType="Date" Name="duedate" />
+                <asp:Parameter Name="userid" Type="Int32" />
+            </InsertParameters>
+            <UpdateParameters>
+                <asp:Parameter Name="projectname" Type="String" />
+                <asp:Parameter Name="description" Type="String" />
+                <asp:Parameter DbType="Date" Name="startdate" />
+                <asp:Parameter DbType="Date" Name="duedate" />
+                <asp:Parameter Name="userid" Type="Int32" />
+                <asp:Parameter Name="original_projectid" Type="Int32" />
+            </UpdateParameters>
         </asp:SqlDataSource>
 
 </div>
@@ -115,5 +133,10 @@
 
 </asp:Content>
 <asp:Content ID="Content2" runat="server" contentplaceholderid="head">
+    <style type="text/css">
+        .auto-style1 {
+            margin-bottom: 2px;
+        }
+    </style>
 </asp:Content>
 
