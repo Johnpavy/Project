@@ -131,6 +131,12 @@
           <div id="top">
                           <asp:Label ID="greeting" runat="server" Text="Welcome"></asp:Label>
                           <br /><a href="Login.aspx"><asp:Label ID="Label1" runat="server" Text="Logout"></asp:Label></a>
+                          <br />
+                          <asp:Button ID="searchBtn" runat="server" Text="Search" OnClick="searchBtn_Click" />
+                          <asp:TextBox ID="searchTxt" runat="server"></asp:TextBox>
+                          <br />
+                          <asp:Label ID="searchLbl" runat="server"></asp:Label>
+
           </div>
         <div id="left">
             <p>
