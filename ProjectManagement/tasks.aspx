@@ -87,7 +87,7 @@
         <br />
                             <asp:GridView ID="GridView1" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="taskid" DataSourceID="SqlDataSource1">
             <Columns>
-                <asp:CommandField ShowEditButton="True" ShowSelectButton="True" />
+                <asp:CommandField ShowEditButton="True" />
                 <asp:BoundField DataField="taskid" HeaderText="taskid" InsertVisible="False" ReadOnly="True" SortExpression="taskid" />
                 <asp:BoundField DataField="projectid" HeaderText="projectid" SortExpression="projectid" />
                 <asp:BoundField DataField="milestoneid" HeaderText="milestoneid" SortExpression="milestoneid" />

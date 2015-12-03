@@ -141,7 +141,7 @@
         <br />
                             <asp:GridView ID="GridView1" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="milestoneid,projectid1" DataSourceID="SqlDataSource1">
             <Columns>
-                <asp:CommandField ShowEditButton="True" ShowSelectButton="True" />
+                <asp:CommandField ShowEditButton="True" />
                 <asp:BoundField DataField="milestoneid" HeaderText="milestoneid" InsertVisible="False" ReadOnly="True" SortExpression="milestoneid" />
                 <asp:BoundField DataField="description" HeaderText="description" SortExpression="description" />
                 <asp:BoundField DataField="startdate" HeaderText="startdate" SortExpression="startdate" />

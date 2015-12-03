@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Menu.Master" AutoEventWireup="true" CodeBehind="projects.aspx.cs" Inherits="ProjectManagement.WebForm3" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-       <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:inetConnectionString5 %>" SelectCommand="SELECT * FROM [projects] WHERE ([userid] = @userid)" UpdateCommand="UPDATE [projects] SET [projectname] = @projectname, [description] = @description, [startdate] = @startdate, [duedate] = @duedate, [userid] = @userid WHERE [projectid] = @projectid">
+       <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:inetConnectionString5 %>" SelectCommand="SELECT * FROM [projects] WHERE ([userid] = @userid)" UpdateCommand="UPDATE [projects] SET [projectname] = @projectname, [description] = @description, [startdate] = @startdate, [duedate] = @duedate, [userid] = @userid WHERE [projectid] = @projectid" DeleteCommand="DELETE FROM [projects] WHERE [projectid] = @projectid" InsertCommand="INSERT INTO [projects] ([projectname], [description], [startdate], [duedate], [userid]) VALUES (@projectname, @description, @startdate, @duedate, @userid)">
            <DeleteParameters>
                <asp:Parameter Name="projectid" Type="Int32" />
            </DeleteParameters>
@@ -11,9 +11,9 @@
                <asp:Parameter DbType="Date" Name="duedate" />
                <asp:Parameter Name="userid" Type="Int32" />
            </InsertParameters>
-        <SelectParameters>
-            <asp:SessionParameter Name="userid" SessionField="userID" Type="Int32" />
-        </SelectParameters>
+           <SelectParameters>
+               <asp:SessionParameter Name="userid" SessionField="Userid" Type="Int32" />
+           </SelectParameters>
            <UpdateParameters>
                <asp:Parameter Name="projectname" Type="String" />
                <asp:Parameter Name="description" Type="String" />
@@ -101,7 +101,6 @@
             <Columns>
                 <asp:CommandField ShowEditButton="True" />
                 <asp:BoundField DataField="projectname" HeaderText="projectname" SortExpression="projectname" />
-                <asp:BoundField DataField="projectid" HeaderText="projectid" SortExpression="projectid" InsertVisible="False" ReadOnly="True" />
                 <asp:BoundField DataField="description" HeaderText="description" SortExpression="description" />
                 <asp:BoundField DataField="startdate" HeaderText="startdate" SortExpression="startdate" />
                 <asp:BoundField DataField="duedate" HeaderText="duedate" SortExpression="duedate" />
